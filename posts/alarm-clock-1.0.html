@@ -1,0 +1,191 @@
+<!-- alarm-clock-1.0.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alarm Clock 1.0</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Alarm Clock 1.0</h1>
+        <small style="white-space: pre;">Jul 2, 2024 |  Author: Nic La |  Tags:  project   code   3D print   microcontroller  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AP1GczN9_CftKFSLBHxRS2PUZeuwjBeypFRWblruv0HtiOPoLJ2gSVbIHmaBJEZWOhkK70e26zKcvsTYw2Atg7IfFrMEODmnOwcv7f8p5th7KrnoUXCb9XAWA8TobbugVhx9G-fPTElTkc0nx0f3SxsLib_eSA=w2148-h1611-s-no-gm?authuser=1"></p>
+
+        <p>Yes, that looks suspiciously like the countdown timer to a bomb. No, that is not a bomb. Why does everything I make look like a bomb? Anyways, my alarm clock broke so naturally I decided to build my own. I started by overengineering everything with features no human has any right having in their alarm clock. I realized I would never actually get to building the thing, so I dialed it back to the basics.</p>
+
+        The Basics:<br>
+        <ul>
+            <li>Keep time within one minute</li>
+            <li>Sync time with NTP server</li>
+            <li>Alarm trigger and button disable</li>
+            <li>Audible alarm</li>
+            <li>Auto adjust time for Daylight Saving</li>
+        </ul>
+
+        <p class="warning-block">WARNING: Don't walk into an airport with this.</p>
+
+        <p><div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/g-nnKYVZKRM" allowfullscreen></iframe>
+        </div></p>
+
+
+        <h4>Step 1: Materials + Tools</h4>
+        Materials:<br>
+        <ul>
+            <li>(x1) <a href="https://www.adafruit.com/product/5544">Raspberry Pi Pico WH - Pico Wireless with Headers Soldered</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/5907">Adafruit Terminal PiCowbell for Pico with Pre-Soldered Sockets - Reset Button & STEMMA QT</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/3491">Arcade Button with LED - 30mm Translucent Clear</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/550">Little Rubber Bumper Feet - Pack of 4</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4217">Micro B Round Panel Mount Extension Cable - 30cm</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4210">STEMMA QT / Qwiic JST SH 4-pin Cable - 100mm Long</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/5599">Assembled Adafruit 0.56" 4-Digit 7-Segment Display - w/ I2C Backpack STEMMA QT - Red</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/1152">Arcade Button Quick-Connect Wire Pairs - 0.11" (10 pack)</a></li>
+            <li>(x1) <a href="https://a.co/d/6Ek78IA">USB C GaN Charger 30W, Anker 511 Charger (Nano 3)</a></li>
+            <li>(x1) Random buzzer that works at 3.3V. Your buzzer may vary</li>
+            <li>(x1) USB C to USB micro cable</li>
+            <li>(x1) <a href="https://a.co/d/38W1wAF">EEEEE M2 M2.5 M3 M4 M5 M6 (350pcs) Metric Threaded Inserts</a></li>
+            <li>(x1) <a href="https://a.co/d/5S6HWpr">1440PCS Screws Nuts and Washers Assortment</a></li>
+            <li>(x1) <a href="https://a.co/d/hV9Z6mx">OVERTURE PLA Filament</a></li>
+        </ul>
+        Tools:<br>
+        <ul>
+            <li>(x1) <a href="https://www.prusa3d.com/en/product/original-prusa-i3-mk3s-3d-printer-3/">Original Prusa i3 MK3S+ 3D printer</a></li>
+            <li>(x1) Weller WES51 Soldering Station</li>
+            <li>(x1) Needle Nose Pliers</li>
+            <li>(x1) Metric Allen Wrench Set</li>
+        </ul>
+
+
+        <h4>Step 2: 3D Print Parts</h4>
+        <p>Download the enclosure CAD files from <a href="https://www.thingiverse.com/thing:6656039">Thingiverse</a>. Print using your preferred 3d printer. I used a Prusa MK3S+. Recommended printer settings in the link.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczMHDLu7cdOJkfRJFAE7A10sPvJb2w-Vgs9wBHtsOSU6p3PdZ31Z-bdFBQ3jTvEer_JiDsTT5ZkZHJKODY-cydxBFRETYidNn0jMf6wbb15OSN1QBmJLl2ie1FMIijxbCExPFDEKhQBStzwHri4A9kPJLA=w2148-h1611-s-no-gm?authuser=1" class="img-fluid" alt="Parts Printing" /></p>
+
+        <p>Once the parts are finished printing, do whatever post processing you believe is necessary. Remove supports, sand rough edges, etc. There shouldn't be much. Use a soldering iron and needle nose pliers to place the threaded inserts in the enclosure base (part1_v1.0.stl). The Pico mount gets x4 of the M3 H8. The enclosure lid gets x4 of the M4 H10. The buzzer gets x2 of the M2 H4. The buzzer inserts can be tricky, but not impossible to place.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczNFfdzw-bzDTsY5tjjitxaTdr-ZQTpzHl5e06keqRxExd8HK-O1SO0w4tdDuz7xFx23X5Bt0uyghIarRS6Hki1a9m3UVxK7nnbzx-DLyv2RQbudl-X5QwwcKjWpVAPvuZp0EMcqUt4UT_TODlJeK7KvDw=w1223-h1630-s-no-gm?authuser=1" class="img-fluid" alt="Threaded Inserts" /></p>
+
+
+        <h4>Step 3: Program</h4>
+        <p>While the enclosure is printing, follow <a href="https://learn.adafruit.com/pico-w-wifi-with-circuitpython/installing-circuitpython">Installing CircuitPython</a> to setup the Pico with the latest CircuitPython. You will need four libraries: adafruit_bus_device, adafruit_ht16k33, adafruit_datetime.mpy and adafruit_ntp.mpy. They can be found in the <a href="https://circuitpython.org/libraries">Library Bundle</a>. Add these four libraries to the lib folder on the Pico's CIRCUITPY drive.</p>
+
+        <p>Download the project code from <a href="https://github.com/sakeofmaking/alarm-clock-1.0/tree/master">GitHub</a>. Configure your settings.toml, replacing your_wifi_ssid and your_wifi_password with your wifi info. Alarm Clock 1.0 will use this info to connect to your network periodically (once a day) to sync its internal time with an external NTP server. I picked a Google NTP server because Google, but any NTP server should do. The Pico doesn't have a built-in Real-Time Clock (RTC), but instead uses the internal clock of the RP2040 to maintain time. This is less accurate than a quarts crystal. Still, at its worse, I found Alarm Clock 1.0 off by no more than a second. You want to be stupid accurate, you can add an RTC module and sync it with your local NTP server. Alarm Clock 3.0?</p>
+
+        <h4>Step 4: Assemble</h4>
+        <p>Mount the Pico in the PiCowbell being sure to orient the Pico such that the USB and STEMMA ports are on the same side. Mount the Pico, buzzer, LED display and USB panel mount in the enclosure base (part1_v1.0.stl). Pico and PiCowbell sandwich should be mounted with their USB and STEMMA ports facing inward. There should be just enough space to plug the USB panel mount into the Pico. This protruding connector and cable bend radius is what determined the enclosure width. A right angle USB cable might help reduce the footprint in Alarm Clock 2.0.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczMCqWpCnLK3vC-AvQ78U3CqdV_AmjE2eFv9jdjRghMLM_knlyIWHrpR3ti7trwGkAxlQjt-_UvI2Lqj-A2mDxTtrSxxlDKTaC-WvBEL11fZVq0Nr0zz4v97wFEQhwVk7x5xifKkdY_GPANpg76USEvmTA=w1696-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Pico in PiCowbell" /></p>
+
+        <p>Mount the arcade button in the enclosure lid (part2_v1.0.stl). Why a white LED arcade button and not a red? The red LED arcade button requires 5V to drive while the white only requires 3.3V. We do have 5V over USB, but tapping into the 5V to drive the LED complicates the circuit slightly. Driving the white LED directly off the Pico GPIO works for Alarm Clock 1.0. Alarm Clock 2.0 will have a red LED.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczOnn6nET6csGcT5uyuzD8EE6FQ0joILZyoyCwuCMYKQ_ORERSOgIezvKi2wFqJRtlUzdoycjeVn3LxsvCWlbkgPU5oZkFvL_sqZ7IzlsZUxBBHw9s0LUAUcY4xKMEJ5HWH5ETzRkXCwfF3uoSs2FNDmUA=w1696-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Arcade Button in Lid" /></p>
+
+        <p>Wire according to the below schematic. Remove the white connector from the arcade button quick connect wire pairs and strip for loose wire. This should make it easy to wire the arcade button to the PiCowbell.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczMoKeTAsLIUvI0lV3aNx4Mj-URCLwGQ2BuKFW--dbwPuzCHgkm12_7Ur5SnVGPalDbsrehzOwXhq1hD-dduDJtrW13xkoyyz07Wxr47xnEagUQYueOSLiKC1PZBAkAwQAGZ6rvf0o4TpRlEmDTI3sR9Dg=w1303-h1171-s-no-gm?authuser=1" class="img-fluid" alt="Schematic" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczOUUk2xFC8Ql7t84KtWVEpbmlXuKCkueAgjeBRCIOtEucjpd7cWuulJXB2z2ssI1g_flr-PdUp12Tv2NC5efnf0iYSPFB0uwbBax7iS11MG9ZFYZj-CNjAi1Zno7ale4-fxbB060AI2E7p-VtEL7BgF-g=w1696-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Wired" /></p>
+
+        <p>Don't forget to add the little rubber bumper feet.</p>
+
+        <h4>Step 5: Enjoy</h4>
+        <p>Place on your nightstand and plug your Alarm Clock 1.0 into power. Wait a few seconds while the Pico connects to your network and syncs with the NTP server. The LED display should display the current time according to PST and accounting for Daylight Saving. I hate Daylight Saving. Be prepared to wake up at 5:30AM everyday...enjoy.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczNgl3DWWMbW8wH9F-y07PIgatBVjLLDIu3mFErMVpmr-8EgERI4V852AkAoK8WRPd03vm7lSHKM0QW1GgczSfNFJcnh3IHB2FyamQKAvQvXmVCt3mk4E-ThzgouiigteJAXWgx761sYtxOBWpBU3H3Jwg=w2148-h1611-s-no-gm?authuser=1" class="img-fluid" alt="Let There Be Light" /></p>
+
+
+        <h4>Step 6: Next Step</h4>
+        <p>Alarm Clock 1.0 was all about comprise to make it work...because I needed an alarm clock. Work it does. Alarm Clock 1.0 exceeds my original requirements list. Still, we can do better.</p>
+
+        Alarm Clock 2.0 will have no compromises. Alarm Clock 2.0 will have...<br>
+        <ul>
+            <li>UPS and battery for power outages</li>
+            <li>Bed shaker instead of a buzzer</li>
+            <li>Automatically switch to buzzer when disconnected from power</li>
+            <li>Louder buzzer</li>
+            <li>Reduced footprint</li>
+            <li>More tactile arcade button with red LED</li>
+            <li>Additional error handling when disconnected from network</li>
+            <li>Location detection to account for different time zones</li>
+            <li>Flux capacitor for economic time travel</li>
+            <li>MQTT dashboard for adjusting any settings</li>
+            <li>MQTT heartbeat for displaying network status</li>
+        </ul>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

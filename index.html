@@ -1,0 +1,294 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" style="color: rgb(0,150,255);" href="index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row pl-2">
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Networked Temperature Sensor</h5>
+                    <hr>
+                    More than just a temperature sensor, the Networked Temperature Sensor (NTS) integrates into your Hom...
+                </span>
+                <a href="posts/networked-temperature-sensor.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AP1GczPQ9sL1rIzHunSG3kooorY7qNEzuxUYZg2e4IXJp_Z9UPo1gSSzGKfD-BeRTGxzyhn71A40ykiyT8HwB2Nm0iKw1R9RXrsK58aBbQiMFuGLO5rfxIklkKMKzo2Aucy189BLLVTh4sSpZNosVENO2Yb0YA=w1696-h1273-s-no-gm?authuser=1">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Alarm Clock 1.0</h5>
+                    <hr>
+                    Yes, that looks suspiciously like the countdown timer to a bomb. No, that is not a bomb. Why does ev...
+                </span>
+                <a href="posts/alarm-clock-1.0.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AP1GczN9_CftKFSLBHxRS2PUZeuwjBeypFRWblruv0HtiOPoLJ2gSVbIHmaBJEZWOhkK70e26zKcvsTYw2Atg7IfFrMEODmnOwcv7f8p5th7KrnoUXCb9XAWA8TobbugVhx9G-fPTElTkc0nx0f3SxsLib_eSA=w2148-h1611-s-no-gm?authuser=1">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Task Tracker Box</h5>
+                    <hr>
+                    Yes, it looks like a bomb. No, it's not a bomb. You know that satisfying feeling you get when you ch...
+                </span>
+                <a href="posts/task-tracker-box.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AP1GczN3I7iEeaXYtrl1yyps4hQRZlKzfkaKb6xwvkcdGMoreJ9sx8RixFgPhpNdfYiRw0LqutF6A1ZTwPxzMF1pFLgmrPjP3PUhPpPyQ3zSqxCGBejvApk86EXto80eHT_PaBq9LpCu4lLEM4viq1x4uoP4XQ=w1687-h1187-s-no-gm?authuser=1">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Harder Better Faster Stronger Box</h5>
+                    <hr>
+                    A Daft Punk inspired musical puzzle box. Each of the silicone push buttons in the 4x4 grid delivers ...
+                </span>
+                <a href="posts/harder-better-faster-stronger-box.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AJFCJaWG8iAlyPpIA8mjLKTg72dMNdsq0JmxiJEvzzhpLfVUhMDoQTsZ5atfGLyR-SsuUGeoqVTl-0ajEHSFzK0qcuW9AU2J9BiBLX3PeGRXKxyFwT1piuqsyxNGP4JDp3E1Z5bWYOv0k6id04A7Y8xMBErW3w=w1718-h1289-s-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Morse Code Box</h5>
+                    <hr>
+                    The Morse Code Box is essentially glorified wrapping paper. It's a more thoughtful way at gifting a ...
+                </span>
+                <a href="posts/morse-code-box.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AL9nZEVKoT9QUlyfWcFSzNiPs544-lw9wmSoXINLNMIYxc0LJxHzVuDGmN_3Hiej5BzaVb30ZWiTNWuaanJD3O6LyzWet7hDI44b4QXNzJ-1r-OcRLs0poX1Hi9LqLoiyVU2KXLXS9mZgArsTXMabM9KSdkkeQ=w1718-h967-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Mobile Whiteboard</h5>
+                    <hr>
+                    Not everything is easily explained in words and there's never a whiteboard where you need one. The M...
+                </span>
+                <a href="posts/mobile-whiteboard.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AL9nZEWHIt5Viw8MOGArSqwDvWTi-Ugy1oCOouJB1b-T7BcYn7ijR2FWaKdwsddH9YMqtDxl9CtSjStASb37GYArFGm0KJD5o5nUEcCsSrDs6hjOb3roTY1FVxiMELbVejLE0YN1Iiklf1de0QmP1WknimHypA=w1718-h1289-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Moonlighting Lamp</h5>
+                    <hr>
+                    The Moonlighting Lamp is a glorified nightlight that changes brightness based on proximity. Most nig...
+                </span>
+                <a href="posts/moonlighting-lamp.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AL9nZEV4MZ8FSY1om7kYad9dRWmvjWlO7wblZmIU-qRPADic1BGAEvta0OiOumSH5BsTrs1dHhs6TOijmVuHq1fNoEqJAGM8gpm6Rcc0_ixwEz60tjAEJzz9QD5Vp_kETHw4s0xyHeJHtm6ifOPf9JUFseaxwg=w1718-h1289-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Opinionated Tissue Box</h5>
+                    <hr>
+                    A tissue box with no reservations about sharing its opinion. Inspired by Tom Haverford's Talking Tis...
+                </span>
+                <a href="posts/opinionated-tissue-box.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AM-JKLVfmPyRQ_oq7G3qyn1jA_AxvnzcEhTWcLwH5ujLt4QKzrshmBcPaxvKCgd5renWhsELCVrFmXoyktXeb4Y6OEqqesG1193nvvdpViKy-xjSQ-laBKnL6NzByvxoP7VLyrrqZVKFiIqENM9uc6oZpJmY6w=w1785-h1340-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Laser Doorbell</h5>
+                    <hr>
+                    Company had a light curtain collecting dust on a shelf. Thought I could put it to better use in my c...
+                </span>
+                <a href="posts/laser-doorbell.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AM-JKLVoU5jM-8zA1zMIJnraOjRdz5R9jcCL79h_gl0UyICqg_vW-eg-wQQM2CQ5tHY3Sa0wRSwQXbJBRICFjjpKjTSrvXCr7nd0Hycklfc_hvXRqvVC4UohjkKVtnaHRA4E-jsFM9VMOGWX5AVVAzPCuNkcUA=w1718-h1289-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>The Desk Build</h5>
+                    <hr>
+                    Behind every great PC is a great desk. Standing desks are all the rage today. Apparently sitting too...
+                </span>
+                <a href="posts/the-desk-build.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AM-JKLVxS33vW6P5nigtFuOjXzkFPIgQbPoBTAQebpuxLm7CMZb3cgIFSD1hLzxGYUouf4txTIbFicPQ5oS8_k5Qbi7d2sEm6YNVwRvuq4kysKDvslAQkLfo5GEYiGoU7sAsb2K7cgB1-EY9mt1gldKU3xi7gw=w1721-h1292-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Custom PC Build</h5>
+                    <hr>
+                    Pre pandemic and fortuitous timing, I decided to upgrade my home PC setup. I had been using an old l...
+                </span>
+                <a href="posts/custom-pc-build.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AM-JKLUH0e7pBhMFzTndl46gbsrK4BvtIY3ogHpz99uDxNIbiT8KbuoOUNEn78T689gzy9oqp7U4iqLc03o_9hmXuRgoCzuf8kt4NwomyfI9_MGEvp7HzQYod9sOe4OuvpyswmNqFJi-Bl513zFADYmif0UQ5A=w1721-h1292-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Friendcatcher</h5>
+                    <hr>
+                    Floating, I prefer to use a Stand Up Paddleboard (SUP) while most friends use an innertube. As the o...
+                </span>
+                <a href="posts/friendcatcher.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/AM-JKLUTC14HGjeh7iNOdV4ge8kGZmD254wtP-_zKBPfyu6qb2GyMeSmSMffkbJW8y2H6heIz6V0sthP0dK9sv_ba-f0T7sALnMxSur_yA7whKrPQS0eYfUKIA03Jicoo7aH0ZOtdY6sahRkPSsymdMIkEMMqA=w1721-h1290-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Cubical Bike Mount</h5>
+                    <hr>
+                    I give you the Cubical Bike Mount. Cubicals don't have a lot of real estate. Mine not being the exce...
+                </span>
+                <a href="posts/cubical-bike-mount.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/ACtC-3fKyGPIlmWGtZk2f-j5qx7KmdQMpPXuz5fDux3GN2WmJBwh0v-n1n35V2L0eisKkpYI4q1V0onJBP9-QZKe1pk4cStnfwkWdk34JGKKIE3X1WANsUVyaVRFDhQ5bN-lTTJ22Ho9fyxqGkssfsjO2l2tRw=w1721-h1292-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Pipe Bookcase</h5>
+                    <hr>
+                    The Pipe Bookcase is an industrial modern metal pipe and wooden board bookcase. I needed to make mor...
+                </span>
+                <a href="posts/pipe-bookcase.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/ACtC-3ebSpvsCWQvMndq7vT9_4bIbqZnu2XdiGL2xD7M7S5tj_5OxPlPDyLATUK-1fjLt9kPpqkrWzgWGTGZAcq3KtIxi6-sy7VO6RyPDcgmkjlwgjNS-IGJW5Ad2-qGYbD_iufb-JgHg34mOD9E130q7S96Lw=w1721-h1290-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Countdown</h5>
+                    <hr>
+                    Countdown is a simple web-based countdown timer. Date to countdown to is entered in the Django admin...
+                </span>
+                <a href="posts/countdown.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/ACtC-3eYWhLzCPk1Kwnx-EhBVxNBqSmr6wDBlLU8MRdFnkTDMwPpaH-8b9HjeqjH_oYtmMZcpUMYtqaeQY-GWR8C31BNl6bTEZNZJaASohJTE9okNMLrymh4hyysA97ls69gWHyPjdr673l0QMY6QWGTeq-dXQ=w1722-h1292-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Hangboard</h5>
+                    <hr>
+                    Hangboard, for the serious rock climber only. I say this because the hangboard is a tool best eased ...
+                </span>
+                <a href="posts/hangboard.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/ACtC-3eKhFvqnBSxbIX4ATXMOMGoOrxva0ajjpNkSMWLwthSLh1Tb2Il11CShmY2u5eDJ1cTPjtPraYlwOat7bwLWHI-0p3Y0HuFCBmsoQ46nB5YbS-s1lBhUPCQxpu6YP472-oMBfW6tJqnyO2TXLSfYBAgOQ=w1721-h1292-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Sake of Making</h5>
+                    <hr>
+                    Sake of Making is a project. It's only fitting that the first project posted to sakeofmaking.com is ...
+                </span>
+                <a href="posts/sake-of-making.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/ACtC-3cBcS4ScMQrE6x4HtHg_lV-IFREbyMxumiIIM_sPsmPUnJLISJTMGuxmxla1xd9Oj_xH3W7q2annwMptIbgn5-lDjpA_6YapBKunsGkOTYbG9lXebKXpVjp9AsVPUIhTcWgkbna3dCsfp7X67asBRrTaw=w1716-h1287-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Functional Art</h5>
+                    <hr>
+                    Functional Art is something you hang on your wall that has more than visual appeal; it has function ...
+                </span>
+                <a href="posts/functional-art.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/ACtC-3fC0XFmilXyEmXLXmUZDCWD2Qt3CShFZVBfTF7p668U5i5f_yYMOK_OCwdbBv0DUXE9qTU7bFYD4PVaWa1AEEmqC_4tQtfRC6eiXHaAbInG7RG37afGVF_WfOe6HUOfDb-tlG030sPhAsQC5y39XKoZzA=w1721-h1292-no?authuser=0">
+                </a>
+            </div>
+
+            <div class="card border-0">
+                <span class="info">
+                    <h5>Hello World</h5>
+                    <hr>
+                    Hello World! Welcome to Sake of Making. Sake of Making is a source of do-it-yourself (DIY) projects ...
+                </span>
+                <a href="posts/hello-world.html">
+                    <img class="card-img" src="https://lh3.googleusercontent.com/pw/ACtC-3f5tVaZkXAjFsMu7KEsUCBE1LR50mlw2E_WkP5W0y9bGqbRmzT4TLuqSJF6-VeHnkgmFO_ExoLmgDGFkC8Jn_Tc7YjlfmSOPLrjvLLAXJ7aOAYQiR9BG3LC9aDa1kl8v1r5lfYwwQ_cLp5h_QJPWkRj2g=w1937-h1290-no?authuser=0">
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

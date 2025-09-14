@@ -1,0 +1,169 @@
+<!-- task-tracker-box.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Tracker Box</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Task Tracker Box</h1>
+        <small style="white-space: pre;">Jun 23, 2024 |  Author: Nic La |  Tags:  project   code   3D print   microcontroller   box  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AP1GczN3I7iEeaXYtrl1yyps4hQRZlKzfkaKb6xwvkcdGMoreJ9sx8RixFgPhpNdfYiRw0LqutF6A1ZTwPxzMF1pFLgmrPjP3PUhPpPyQ3zSqxCGBejvApk86EXto80eHT_PaBq9LpCu4lLEM4viq1x4uoP4XQ=w1687-h1187-s-no-gm?authuser=1"></p>
+
+        <p>Yes, it looks like a bomb. No, it's not a bomb. You know that satisfying feeling you get when you checkoff completed tasks in your task tracker. The Task Tracker Box gives you the physical satisfaction of checking off those same tasks using heavy duty toggle switches. Flipping those heavy duty toggle switches feels like you destroyed your tasks with TNT...still not a bomb.</p>
+
+        <p class="warning-block">WARNING: Don't walk into an airport with this.</p>
+
+        <p>Requisitioned by a friend, the Task Tracker Box fires off webhooks to close out your tasks. This post only describes the box side (sending webhooks). The task tracker side (receiving webhooks) is for another day.</p>
+
+        <p><div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/i6bPa5V-MPY" allowfullscreen></iframe>
+        </div></p>
+
+
+        <h4>Step 1: Materials + Tools</h4>
+        Materials:<br>
+        <ul>
+            <li>(x5) <a href="https://www.adafruit.com/product/3218">Illuminated Toggle Switch with Cover - Red</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/302">Diffused RGB 5mm LED (25 pack)</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/2174">5mm Plastic Bevel LED Holder - Pack of 5</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4294">Through-Hole Resistors - 1.0K ohm 5% 1/4W - Pack of 25</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/5526">Raspberry Pi Pico W</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/5583">Socket Headers for Raspberry Pi Pico - 2 x 20 pin Female Headers</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4213">Micro USB B Jack to USB A Plug Round Panel Mount Adapter</a></li>
+            <li>(x1) USB A to USB Micro B cable (power and data)</li>
+            <li>(x1) USB C to USB Micro B cable (power and data)</li>
+            <li>(x1) <a href="https://a.co/d/1sIEmmS">OVERTURE PLA Filament</a></li>
+            <li>(x1) <a href="https://a.co/d/38W1wAF">EEEEE M2 M2.5 M3 M4 M5 M6 (350pcs) Metric Threaded Inserts</a></li>
+            <li>(x1) <a href="https://a.co/d/5S6HWpr">1440PCS Screws Nuts and Washers Assortment</a></li>
+            <li>(x1) <a href="https://a.co/d/6Ek78IA">USB C GaN Charger 30W, Anker 511 Charger (Nano 3)</a></li>
+            <li>(x1) Assorted 22 AWG hookup wire</li>
+            <li>(x1) Solder</li>
+            <li>(x1) Hot glue (optional)</li>
+            <li>(x1) 1/8" Heat Shrink (optional)</li>
+        </ul>
+        Tools:<br>
+        <ul>
+            <li>(x1) <a href="https://www.prusa3d.com/en/product/original-prusa-i3-mk3s-3d-printer-3/">Original Prusa i3 MK3S+ 3D printer</a></li>
+            <li>(x1) 22 AWG Lug Ring Crimper</li>
+            <li>(x1) Hot glue gun (optional)</li>
+        </ul>
+
+
+        <h4>Step 2: 3D Print Parts</h4>
+        <p>Download the enclosure CAD files from <a href="https://www.thingiverse.com/thing:6566982">Thingiverse</a>. Print using your preferred 3d printer. I used a Prusa MK3S+. Recommended printer settings in the link.</p>
+
+        <p>Once the parts are finished printing, do whatever post processing you believe is necessary. Remove supports, sand rough edges, etc. There shouldn't be much. Use a soldering iron to insert the threaded inserts in the enclosure base (Part_1_v1.2.stl). The Pico mount gets x4 of the M2 H4. The enclosure lid mount gets x6 of the M3 H10.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczO189U0JIxzhRKfbqG39xwZUIfLC10dViUFyN2CVlEDayNx3qGmf_x7hwwJLZQCdq7pZE53KN0SYHZsTrtSrDCsNwclXPh5UeoSsz-IlvWwX48K9MmfZ69kP8cTQX3M8x5dUVi9b4OXLg_agjCNj1RAuA=w2148-h1611-s-no-gm?authuser=1" class="img-fluid" alt="Threaded Inserts" /></p>
+
+        <h4>Step 3: Program</h4>
+        <p>While the enclosure is printing, follow <a href="https://learn.adafruit.com/pico-w-wifi-with-circuitpython/installing-circuitpython">Installing CircuitPython</a> to setup the Pico with the latest CircuitPython. You will need two libraries: adafruit_connection_manager.mpy and adafruit_requests.mpy. They can be found in the <a href="https://circuitpython.org/libraries">Library Bundle</a>. Add these two library files to the lib folder on the Pico's CIRCUITPY drive.</p>
+
+        <p>Download the project code from <a href="https://github.com/sakeofmaking/task-tracker-box">GitHub</a>. Follow the README.md instructions to configure your settings.toml with your wifi and webhook settings. If you don't have a webhook server setup already, I suggest visiting <a href="https://webhook.site/">Webhook.site</a> for a unique webhook URL. Replace your_webhook_send_url with your unique webhook URL. Copy the code.py and settings.toml to your CIRCUITPY drive.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczPWfE_ur04xQURyJHhUE_0pZWfDKoeICfOlU8NTIpW_8TcortXEOpuiThHtUTPJfujz8oU2ASG8LiXXpwPOIkHM1QxoYUANfn_JYIpqxpm3g41BHfWAujzEBLZc68s8GUOmclkBucsB5-ZrOMp6NJVKlA=w997-h698-s-no-gm?authuser=1" class="img-fluid" alt="Webhook Site" /></p>
+
+        <h4>Step 3: Assemble</h4>
+        <p>Enclosure printed and Pico programmed, throw it all together. Start by installing the toggle switches and LEDs in the enclosure cover (Part_2_v1.0.stl). I recommend using hot glue to hold the LED in the Bevel LED Holder.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczPyw1cvHoIj8OxSwoctQV_RZlCTOuyH0Is5RNcR-CdpdqatkIsflYjwPKhELE8aLKI0HGIn5Yq7FsORvd-fRzz-SZzxXdeY8iqikckfF3mHfZi_DB2OUidWz142TOLNA4jzS62k_tCVlufWb1RYhn1utQ=w2148-h1611-s-no-gm?authuser=1" class="img-fluid" alt="Enclosure Cover" /></p>
+
+        <p>Solder the socket headers to the Pico. I used socket headers for convenience but a more secure option is recommended. Solder a 1 kOhm resistor to pin 2 (red) of each LED. The resistor is needed to limit the current to the LED. Reference the <a href="https://cdn-shop.adafruit.com/datasheets/FD-5WSRGB-A.PDF">LED Datasheet</a> to identify which pin is 2. Even though we only need red, I used RGB LEDs for future expansion. Mount the Pico and USB panel mount in the enclosure base. Connect a USB A to USB Micro B cable from the USB panel mount to your Pico. I commandeered a perfectly sized cable from another device.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczPBxzmY9yGQWt0HabZFHIfl70Z-PuaPXsMXldsIk5ytmrhWXI7j7d9zfiZ_u-vJnCMdbvg2DQT7-TgbKVA_sEfVwLTRflo3MRobaPfHLscuHR-7fQCVt0cAz9hswfwczMaznQVpNUTCEXz4d6cyl0ZAdw=w2148-h1611-s-no-gm?authuser=1" class="img-fluid" alt="Pico and Cable" /></p>
+
+        <p>Wire the cover to the base. Position the enclosure cover and base next to each other according to the below picture. Wire according to the below schematic. Use the crimper to crimp the lugs that came with the toggle switches. Apply heat shrink where necessary.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczO-eIrwHOQmXpR4WvwF9aHtJjnfm2K0XIKC2KDnzp_finV0O9W-lJ5U6xPPZbcT0Ru65Xa5CU-bIpUIzE7aY_DPeY-o4V-M5pZotC-GrLiHmRzr0af_jatdOwCwO6zAzkzFkWTlVNqdQE2ymvQvoIssZw=w2148-h1611-s-no-gm?authuser=1" class="img-fluid" alt="Cover and Base" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczMDBbhy3aaIEg6MNMgQ3oyX3QfqFAoR8ZL0mqQd6BYa0w-B15rp40Ykt89mOhD4yzE1k-otyEoec4RcNkPPKsJN8xTbOEn2G1e5gIt5VCd4HtNtFl6U7nID7tszcO2uW-R-BxC4rPS8QZRrGhZ-0aFxKA=w1408-h1140-s-no-gm?authuser=1" class="img-fluid" alt="Schematic" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczNL24JXaWc-dgWdSoRABQI9xuFTpaL3BlZOFPc3knZ-vkYAYd6jReA5UjMIDieiLXYIEMWk6AokfPwNaWxNJTct9Xw7CteX2Z8Py_3vfV2Qff7kz_1dJPNF71oHLVeL0OeVwRXlBxglsCH9soLgjhTTfg=w2148-h1611-s-no-gm?authuser=1" class="img-fluid" alt="Wired Up" /></p>
+
+
+        <h4>Step 5: Enjoy</h4>
+        <p>Use the USB C to USB Micro B cable to power your Task Tracker Box. I found using a USB A to USB Micro B to reprogram the Task Tracker Box, my laptop USB A port struggled. Didn't have a problem with USB C.</p>
+
+        <p>When first powering on, give the box a few seconds to connect to the network. You should see all five LEDs illuminated. Toggling a switch from OFF to ON, toggles the LED and sends a webhook with the status of all switches to your unique webhook URL.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczN3I7iEeaXYtrl1yyps4hQRZlKzfkaKb6xwvkcdGMoreJ9sx8RixFgPhpNdfYiRw0LqutF6A1ZTwPxzMF1pFLgmrPjP3PUhPpPyQ3zSqxCGBejvApk86EXto80eHT_PaBq9LpCu4lLEM4viq1x4uoP4XQ=w1687-h1187-s-no-gm?authuser=1" class="img-fluid" alt="Powered On" /></p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

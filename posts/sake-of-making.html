@@ -1,0 +1,163 @@
+<!-- sake-of-making.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sake of Making</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Sake of Making</h1>
+        <small style="white-space: pre;">Mar 22, 2021 |  Author: Nic La |  Tags:  project   code  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/ACtC-3cBcS4ScMQrE6x4HtHg_lV-IFREbyMxumiIIM_sPsmPUnJLISJTMGuxmxla1xd9Oj_xH3W7q2annwMptIbgn5-lDjpA_6YapBKunsGkOTYbG9lXebKXpVjp9AsVPUIhTcWgkbna3dCsfp7X67asBRrTaw=w1716-h1287-no?authuser=0"></p>
+
+        <p>Sake of Making is a project. It's only fitting that the first project posted to sakeofmaking.com is Sake of Making itself...meta. Previously, sakeofmaking.com was made using pure HTML and CSS. Obviously, this is not sustainable. To "get with the times", I decided to learn and use Django as the foundation for the new sakeofmaking.com. I'll show you the steps and struggles how to do the same.</p>
+
+        <h4>Step 1: Register a Domain</h4>
+        <p>Decide on a domain name. Best to secure your domain name first. You never know who might share your inspiration. Use a service like <a href="https://zone.vision/#/">Zone Vision</a> to verify the domain name is available. Choose a domain name service (DNS) provider. A good DNS provider includes services for registering your domain name and hosting it.</p>
+
+        <p>I already owned the domain sakeofmaking.com through <a href="https://www.nearlyfreespeech.net/">NearlyFreeSpeech.net</a> (NFSN). I chose them many years ago because it cost very little to maintain a domain name. However, these days, I do not recommend them. They've fallen behind the times and lack the necessary services to properly manage a domain name. Specifically, they lack the ability to reliably point domain aliases to a DNS target...kind of important. We'll get into that later. I can't recommend an alternative DNS provider, as NFSN is all I know.</p>
+
+
+        <h4>Step 2: Research Research Research</h4>
+        <p>Domain name in hand, read a book. This is one of those projects best started with the end in mind. <a href="https://www.amazon.com/Django-Beginners-Build-Websites-Python/dp/1735467200/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=">Django for Beginners by William S. Vincent</a> provides you with everything you need to deploy your app. Adding deployment elements into your app as you build it will save you a lot of headache when it comes to deploying. Additionally, "Django for Beginners" will introduce you to <a href="https://getbootstrap.com/">Bootstrap</a>, a library of styling templates.</p>
+
+        <p>Some key takeaways:</p>
+        
+        <ul>
+            <li>Pg 91: Add CSS to your project using Static Files</li>
+            <li>Pg 149: Always use custom user model for new projects</li>
+            <li>Pg 161: Set templates directory to main directory</li>
+            <li>Pg 217: Set TIME_ZONE according to your timezone</li>
+            <li>Pg 263: Deploy using <a href="https://id.heroku.com/login">Heroku</a></li>
+        </ul>
+
+        <p>Additionally, I found the below resources helpful:</p>
+
+        <ul>
+            <li><a href="https://learndjango.com/tutorials/django-best-practices-referencing-user-model">Django Best Practices: Referencing the User Model</a>: I used this to add an author dropdown menu to my blog posts. If I ever plan to let someone else write for my website, the functionality is there to support multiple authors.</li>
+            <li><a href="https://realpython.com/django-redirects/">The Ultimate Guide to Django Redirects</a>: I used this to redirect users from sakeofmaking.com to sakeofmaking.com/projects/.</li>
+        </ul>
+
+        <h4>Step 3: Build the Blog App</h4>
+        <p>After taking note of deployment elements, it's time to start building your first of two apps. Follow <a href="https://realpython.com/get-started-with-django-1/#share-your-knowledge-with-a-blog">Share Your Knowledge With a Blog</a> to create your blog app. This guide does an excellent job detailing the steps necessary to build a working blog. However, it lacks deployment elements. Populate your app with the deployment elements you learned in Step 2 but hold off on deploying.</p>
+
+        <h4>Step 4: Build the Project App</h4>
+        <p>Follow <a href="https://realpython.com/get-started-with-django-1/#showcase-your-projects">Showcase Your Project</a> to create the second of two apps. It doesn't really matter which app you create first. Again, populate with deployment elements.</p>
+
+        <h4>Step 5: Add Images</h4>
+        <p>This step primarily applies to content. How does one add an unspecified number of images without concern for DNS server space? To answer this, I researched many methods on how to add images.</p>
+
+        <ul>
+            <li><a href="https://realpython.com/get-started-with-django-1/#showcase-your-projects">Portfolio tutorial</a></li>
+            <li><a href="https://learndjango.com/tutorials/django-file-and-image-uploads-tutorial">Django File (and Image) Uploads Tutorial</a></li>
+            <li><a href="https://medium.com/ibisdev/upload-multiple-images-to-a-model-with-django-fd00d8551a1c">Upload Multiple Images to a Model with Django</a></li>
+            <li><a href="https://getbootstrap.com/docs/4.0/content/images/">Bootstrap Images</a></li>
+        </ul>
+
+        <p>I eventually found the <a href="https://learndjango.com/tutorials/django-markdown-tutorial">Markdown Python library</a>. This converts text to HTML. This in concert with storing my images on <a href="https://www.rainsberger.ca/posts/2016-02-19-direct-link-to-image-in-google-photos-for-html-image-tag/">Google Photos Shared Album</a>, allowed me to embed images in my blog posts.</p>
+
+        <p>While we're on the topic of images, follow <a href="https://learndjango.com/tutorials/django-favicon-tutorial">Django Favicon Tutorial</a> to add a favison to your app.</p>
+
+        <h4>Step 6: Style Your Website</h4>
+        <p>The best artists steal. Find some inspiration. Visit different websites whose styling you find appealing. To get started, think about the below page elements and how to best display them. More page elements will reveal themselves as you go. Use tools to identify CSS styling. Use Google Chrome Ctrl+Shift+I to view developer tools. Right click an element and select Inspect. Use Microsoft PowerToys Win+Shift+C Color Picker to identify RGB values.</p>
+        <ul>
+            <li>Text font</li>
+            <li>Text color</li>
+            <li>Text background color</li>
+            <li>Link color</li>
+            <li>Hover link</li>
+        </ul>
+
+        <p>I personally enjoy the color pallets of <a href="https://www.masterzen.fr/">Masterzen's Blog</a>.</p>
+
+
+        <h4>Step 7: Deploy to Heroku</h4>
+        <p>Follow page 263 of "Django for Beginners". They summarize the deployment process and walk you through each step in detail. Even with such a detailed guide, I still struggled with certain parts of the deployment process.</p>
+        <ul>
+            <li>Configuring static files: Make sure you have static files, e.g. base.css, in your static file folders. Git will not track empty folders.</li>
+            <li>ALLOWED_HOSTS: Add your domain name and any aliases to ALLOWED_HOSTS.</li>
+            <li>SECRET_KEY: Add config variables, including SECRET_KEY, via the Heroku settings page of your web app.</li>
+        </ul>
+
+
+        <h4>Step 8: Point Your Domain Name to Your App</h4>
+        <p>You should have a domain name, e.g. www.sakeofmaking.com, and an alias, e.g. sakeofmaking.com, secured. Heroku makes it easy to <a href="https://devcenter.heroku.com/articles/custom-domains">add your domain names to your app</a>. Heroku will supply you with a DNS target for each domain name. It's just a matter of configuring your DNS provider to point to the Heroku-supplied DNS target. This is known as a CNAME record. Don't do what I did. NFSN doesn't allow you to create a CNAME record with an alias. To make it work, I created what's called an A record and pointed my DNS provider to the IP address of my Heroku-supplied DNS target. This is a no no as these IP addresses are dynamic. It's only a matter of time...</p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

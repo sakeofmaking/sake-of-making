@@ -1,0 +1,161 @@
+<!-- hangboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangboard</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Hangboard</h1>
+        <small style="white-space: pre;">Mar 22, 2021 |  Author: Nic La |  Tags:  rock climbing   project   wood  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/ACtC-3eKhFvqnBSxbIX4ATXMOMGoOrxva0ajjpNkSMWLwthSLh1Tb2Il11CShmY2u5eDJ1cTPjtPraYlwOat7bwLWHI-0p3Y0HuFCBmsoQ46nB5YbS-s1lBhUPCQxpu6YP472-oMBfW6tJqnyO2TXLSfYBAgOQ=w1721-h1292-no?authuser=0"></p>
+
+        <p>Hangboard, for the serious rock climber only. I say this because the hangboard is a tool best eased into and built on with time. Ignoring the risks can mean certain injury. Still, when used correctly, hangboarding can be a valuable tool for the rock climber seeking continuous improvment. Isn't that what rock climbing is all about? That said, here's a bunch more warnings.</p>
+
+        <p class="warning-block">WARNING: Your wall may be different and therefore will require different hardware. Know your wall before purchasing hardware. The location I wanted to install my hangboard was half stud and half dry wall. Therefore, I bought (x3) wood screws and (x3) toggle bolts.</p>
+        <p class="warning-block">WARNING: If installing at a rental property, consult your lease and landlord before drilling 1/2" holes in your wall. I fully expect to loose my security deposit when I move out.</p>
+        <p class="warning-block">WARNING: Electrical lines are run behind walls. While unlikely to be run immediately above a doorway, know your wall before drilling.</p>
+        <p class="warning-block">WARNING: A hangboard can be dangerous if not installed properly and can be dangerous if installed properly. Know how to use a hangboard before attempting. I highly recommend "<a href="https://www.amazon.com/Rock-Climbers-Training-Manual/dp/0989515613/ref=sr_1_1?crid=283ML38VTYE8D&keywords=the+rock+climbers+training+manual&qid=1562518115&s=books&sprefix=the+rock+climber%2Caps%2C485&sr=1-1">The Rock Climber's Training Manual</a>" by Michael L. Anderson PhD and Mark L. Anderson.</p>
+
+        <h4>Step 1: Materials + Tools </h4>
+        Materials:
+        <ul>
+            <li>(x1) <a href="https://www.amazon.com/TRANGO-Prodigy-Training-Center-Hangboard/dp/B01CK219W8/ref=sxin_4_osp15-13ff1939_cov?ascsubtag=13ff1939-8321-47d7-85c3-624523b11988&creativeASIN=B01CK219W8&cv_ct_id=amzn1.osp.13ff1939-8321-47d7-85c3-624523b11988&cv_ct_pg=search&cv_ct_wn=osp-search&keywords=hangboard&linkCode=oas&pd_rd_i=B01CK219W8&pd_rd_r=08ab40cb-23e5-4eec-9d9b-38182366a112&pd_rd_w=g1PVz&pd_rd_wg=mVKgT&pf_rd_p=c501273b-119a-4fc9-ad78-eda5006b0be9&pf_rd_r=6BT2ANXYRZA51P0P0YJR&qid=1562430618&s=gateway&tag=ogl02-20">TRANGO Rock Prodigy Training Center Hangboard</a>. Highly recommend. However, other hangboard will suffice</li>
+            <li>(x1) small stool from <a href="https://www.amazon.com/Kikkerland-Rhino-Stool-Short-Black/dp/B004V3PE2Q/ref=sr_1_3?keywords=rhino+stool&qid=1562519516&s=gateway&sr=8-3">Amazon</a></li>
+            <li>(x1) 2x12-12ft Prime Doug Fir cut to 37" from Home Depot. I used scrap wood</li>
+            <li>(x3) 1/4 in. Drywall Anchor from <a href="https://www.homedepot.com/p/Hilti-1-4-in-Drywall-Anchor-with-Phillips-Head-Screw-8-Pack-3588748/305510552?MERCH=REC-_-PIPHorizontal1_rr-_-308158574-_-305510552-_-N">Home Depot</a></li>
+            <li>(x3) 1/4 in.-20 x 3 in. Zinc Plated Hex Bolt from <a href="https://www.homedepot.com/p/Everbilt-1-4-in-20-tpi-x-3-in-Zinc-Plated-Hex-Bolt-800636/204633286">Home Depot</a>. 3" bolts required to catch anchors through 2" wood and 1/2" dry wall</li>
+            <li>(x3) 1/4 in. x 3 in. Zinc-Plated Hex Lag Screw from <a href="https://www.homedepot.com/p/Everbilt-1-4-in-x-3-in-Zinc-Plated-Hex-Lag-Screw-801366/204645601">Home Depot</a></li>
+            <li>(x6) 1/4 in. Zinc-Plated Flat Washer from <a href="https://www.homedepot.com/p/Everbilt-1-4-in-Zinc-Plated-Flat-Washer-25-Piece-per-Bag-802304/204276388">Home Depot</a></li>
+        </ul>
+        Tools
+        <ul>
+            <li>(x1) stepping stool or ladder</li>
+            <li>(x1) hand drill + 1/2" wood bit</li>
+            <li>(x1) stud finder</li>
+            <li>(x1) leveler</li>
+            <li>(x1) socket set</li>
+            <li>(x1) screwdriver set</li>
+            <li>(x1) belt sander</li>
+            <li>(x1) Dremel</li>
+            <li>(x1) friend</li>
+            <li>(x1) pizza (for the friend)</li>
+        </ul>
+                
+        <h4>Step 2: Secure a Location</h4>
+        <p>Secure a location for your hangboard. Ideally the hangboard should be in a location where it's easy to reach the top holds while allowing your legs to hang freely. That means high enough so you don't have to clentch your legs and with enough space in front of you such that your knees don't hit anything. With the addition of a small stool, above a doorway satisfies both these requirements. Thankfully I have a high ceiling and an interior doorway.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3ftLGJh-2dZIm5yGZoKjUEHtWW_B1teHErlZx1GeiI01sGRZUpORjAywkrC3JDpGQeOo0_w3R1z30vYAGLvDTICmfKOe46B-6PycRLKMwQRUfqDbdzmBxzticHdiu3f3ogd9h0iJXtSUnoxoSctr_gdZg=w1721-h1292-no?authuser=0" class="img-fluid" alt="location" /></p>
+                
+        <h4>Step 3: Map the Wall</h4>
+        <p>Ideally your chosen location would have three vertical studs spaced 18" apart. Life's not ideal. Using a stud finder, I discovered my location had two horizontal studs: one too high and one immediately above my door (a doorframe if you will). I decided to go with the bottom stud and rest the hangboard on the molding for additional support. This meant the top of my hangboard would be supported by nothing but drywall. Regardless of the 85 lb per toggle bolt shear load rating, I'm still sketched out.</p>
+                
+        <h4>Step 4: Prep the Board</h4>
+        <p>Using your leveler, confirm the two largest surfaces of your board are flat. This will ensure the holds mount flush with the board and the board mounts flush with the wall. If not flat, use the belt sander to level the board. Placing your hangboard holds on the board for reference, mark where to drill your six mounting holes. Use the 1/2" wood drill bit to drill six 1/2" diameter holes in your board.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3dleuN0J2j2A0EixPJ6LINH2nj1zyqbP8irelMeof9LelD7s1y5aV747ag3r4vqCzYDp5UywnaeKS4YEjjE_kJfhmCYeRL_0uqtZ-zdCUWc5aGT6Uqo7s2wHTw-dItxosM9vXipvtBFT1VGo5NHl8LcMQ=w1721-h1292-no?authuser=0" class="img-fluid" alt="Level" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3dkwAW9pu12w-_1QljQbGXQGQ2EjhQVS7ZASEeAi79UHRm6M1oGqpBbVHYE6r4uEs-R7SnMGrzjCSu8ANCQmtP1ZF9weT5hh7OAOmve2C2KK4vXdW82i2rNmTHPm0x3E9oJThaDp585np6ssPGeQrLtcQ=w1721-h1292-no?authuser=0" class="img-fluid" alt="Drill" /></p>
+            
+        <h4>Step 5: Mount the Holds</h4>
+        <p>Use the hardware that came with the hangboard holds to fix the holds to the board. TRANGO recommends spacing the holds 4" apart. I felt more comfortable with 6" spacing. Henceforth, I will be referring to this hangboard-board combination as Hangboard. Turn the Hangboard over and file down any exposed screws. A Dremel makes quick work of this.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3e_ZyfKWnJ61VSJ5Xwqg1TufegAnEQ9XczDPl3GJyDKY2_FYYPSFHUu7Mq0IxnhPjpUUCPbSjRhpOCmWzOkHk4dAoQtayZ9zRX1YKzcBVUqsExYRDCd-jAyKmnDkw11HBlqTTiIrudqh_5WL7K1i0IrGQ=w1721-h1292-no?authuser=0" class="img-fluid" alt="Drill" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3fMtGAMyL9P2d_MjLS7qzwWLQD21w-5kNBIf7eEyUQzK1TOYhAX3InnxS9H69pmICAs63p329I8Fx85Ww5uXYSGc5c6PyEvsX0Bi-1tvOLfpCUKZwWDs3v1DCPUQBGqeyJ6WOEcmqlaCITiTCHpvUt1zg=w1721-h1292-no?authuser=0" class="img-fluid" alt="Drill" /></p>
+                
+        <h4>Step 6: Mount to Your Wall</h4>
+        <p>Do any pre-mount wall prep required by your hardware. I predrilled my wall and inserted the three anchors. This is where your friend comes in handy. Have them hold the hangboard in place while you fix it to your wall. I didn't want to bother my friends (I swear I have friends), so I cobbled together pipe mount that rested on top of my bookcase. Resting the Hangboard on the door molding and using the pipe mount to press the Hangboard against the wall, I fixed the Hangboard in place.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3eYQ1VGY2BPimYOtbtkwBZ6E_Eh3z0Z9MeS5ltU5Lk7X8UQ-aVRecP_myD2eENMbSesPwRPPl-eV7t0yJH1IFxHwlriPRzO3QKHPqEIKhm_rdmlRISdEwWCvM1dJ9rnlPQ2uykwz5r7Im5W8xA-waP4Cg=w1721-h1292-no?authuser=0" class="img-fluid" alt="Pipe Mount" /></p>
+        
+        <h4>Step 7: Enjoy</h4>
+        <p>Carefully! Test your Hangboard. Hear creeking? Hang and tighten as necessry. Now you have no excuse for lack of continuous improvement.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3duXIOAZr4QzbgtG6YP_D5aOmgcVfJSBz2cIWYY-2nHkP76t9GvtDqZY8PR3_uzeFQjCMqi06frhAd0bDKAB3MEjxiv_Gk3CBff8Pbi4m77r7dlz8XnFiKgumx2GIfsuq3jmRWmvorEkqH3L2Ax9UZbng=w1721-h1292-no?authuser=0" class="img-fluid" alt="Hang" /></p>
+                
+        <h4>Next Step</h4>
+        <p>Install a pulley system to counteract your body weight while hanging. This will lower the entry barrier to hangboarding.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3coAFA7SxcAmLnVY9L5xd9CqahkDD-dfEffg642jhcVWu4lkG0XcDbWxuJFyHtkUQau6gfwrcM-0jZ8JN04NENy2FJSQDHa9z1xbPjHOdGpybBKxQALBjkzTLFYZeOk0axDGzdrEg7NbTMfF3PeMeGasA=w1721-h1292-no?authuser=0" class="img-fluid" alt="Pulley System" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3fTWCk3CR_PH09a3mtRr9pPoGdbff-UPEXd8yoautHhoMBLSrxPeNkdck2HopMX-s_M7uAlnE4NNtqyS3Egfadko2IRk5ddVxS75vhLQqEYprRW5qDORaWuWpmpl_PZ-1EXZhhk3hbxi8eWvjwvCkbDTg=w1721-h1292-no?authuser=0" class="img-fluid" alt="Pulley Test" /></p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

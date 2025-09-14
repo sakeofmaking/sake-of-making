@@ -1,0 +1,207 @@
+<!-- morse-code-box.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Morse Code Box</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Morse Code Box</h1>
+        <small style="white-space: pre;">Dec 28, 2022 |  Author: Nic La |  Tags:  project   code   microcontroller   box  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AL9nZEVKoT9QUlyfWcFSzNiPs544-lw9wmSoXINLNMIYxc0LJxHzVuDGmN_3Hiej5BzaVb30ZWiTNWuaanJD3O6LyzWet7hDI44b4QXNzJ-1r-OcRLs0poX1Hi9LqLoiyVU2KXLXS9mZgArsTXMabM9KSdkkeQ=w1718-h967-no?authuser=0"></p>
+
+        <p>The Morse Code Box is essentially glorified wrapping paper. It's a more thoughtful way at gifting a less thoughtful gift and it's perfect for the puzzle enthusiast or computer scientist. It presents the recipient with a challenge that, in the end, leaves them with a reward not a gift.</p>
+
+        <p><div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/MWJ01wNyXn8" allowfullscreen></iframe>
+        </div></p>
+
+        <p>My friend and I have this anti-tradition tradition. We pass back and forth The Celebratory $100 Bill each birthday, in part, to stay in contact with each other but also to stray from tradition. We can never spend the bill so it's lost its innate value but gained a value you can't put a price on. In an attempt to make it more interesting we try presenting the bill in new and creative ways. The Morse Code Box is one of my new and creative ways.</p>
+                
+        <p>The Morse Code Box is made from a wine box with a sliding lid. In the OFF state, the lid is locked and doesn't slide back. Connecting the box to power puts it in the ON state and the Red LED begins to flash, only it's flashing at an inconsistent rate. This is the hint. The LED is flashing a message of your choosing in morse code. I used the message "HAPPY BD", "BD" of course meaning "birthday". My friend is a computer scientist so I thought he might appreciate how "BD" is also hex (I was wrong). Convert this to binary, 0xBD = 0b10111101, and that's 8 bits of 1s and 0s. There are 8 switches on our Morse Code Box labeled "1" for up and "0" for down. Entering the correct switch combination illuminates the Green LED and enables the solenoid for 10 seconds allowing the recipient to slide back the lid revealing their prize...an Arduino Zero. Those things aren't cheap.</p>
+                
+        <h4>Step 1: Materials + Tools</h4>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEU1_IkPy0_RsL6RVCIy_dnPndwZ0sQpQrRa9TPNa_s3OifLorg3Wcmy2y3EKvWsiqxXaUCgoKI628Mh11JKTpQ9Y5NnAPijnT8M2vBRvAJifdutp6-HKlsVVTVvdYdFMmC20rNeemf7toyXfo-9flRirg=w1718-h1289-no?authuser=0" class="img-fluid" alt="Materials" /></p>
+
+        Materials:<br>
+        <ul>
+            <li>(x1) <a href="https://www.amazon.com/dp/B0B9TSCRHQ/">Twine Single Wooden Decorative Wine Box with Sliding Lid</a></li>
+            <li>(x1) scrap of wood from your last wood project</li>
+            <li>(x1) Arduino Zero (not Arduino Uno as in some pictures). We need the Arduino Zero for it's large number of interrupt ports.</li>
+            <li>(x1) Arduino power supply. I used a 9V center-pin-positive power adapter.</li>
+            <li>(x8) <a href="https://www.digikey.com/product-detail/en/nkk-switches/M2011SS1W01-UC/360-3289-ND/2105194">SWITCH TOGGLE SPST 6A 125V</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/2776">Mini Push-Pull Solenoid - 5V</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/976">TIP120 Power Darlington Transistors</a></li>
+            <li>(x2) 220 Ohm Resistor</li>
+            <li>(x1) 2.2 kOhm Resistor</li>
+            <li>(x1) Green LED</li>
+            <li>(x1) Red LED</li>
+            <li>(x1) <a href="https://www.adafruit.com/product/755">1N4001 Diode</a></li>
+            <li>(x1) 22 AWG wire. I used solid core to make the wire easier to work with</li>
+            <li>(x1) 1/4" heatshrink. I used this to help bundle the wire together</li>
+            <li>(x1) solder</li>
+            <li>(x1) hot glue</li>
+            <li>(x1) double-sided tape (optional)</li>
+            <li>(x100) $</li>
+        </ul>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEXE6y2uBtB1d02aiclqMoFn9pXagMhFOXp-S549YomGlaYUMpi9OE-gugtQVi5-XGUidQAMfw_Sc45Cqq7LY3SRVNcE2y049ZpKUu3DvZc8ZAOv7auZyOa7uXqQBtaC75PGCVZ7wHoQixoQyUJ8y6LsFg=w1718-h1289-no?authuser=0" class="img-fluid" alt="Tools" /></p>
+
+        Tools:<br>
+        <ul>
+            <li>(x1) pencil</li>
+            <li>(x1) electric drill with 1/4" bit</li>
+            <li>(x1) soldering iron</li>
+            <li>(x1) adjustable third hand</li>
+            <li>(x1) Arduino IDE</li>
+            <li>(x1) hot glue gun</li>
+            <li>(x1) mechanic gloves (optional)</li>
+            <li>(x1) <a href="https://www.amazon.com/Yasutomo-Linoleum-Cutting-Assorted-Steel/dp/B0027AGN6Q/">Yasutomo Wood Carving Knives Set Standard 12 Pieces</a></li>
+            <li>(x1) hack saw</li>
+            <li>(x1) self-healing cutting mat</li>
+            <li>(x1) ruler</li>
+        </ul>
+
+        <h4>Step 2: Carve the Wedge</h4>
+
+        <p>This will secure your lid while the solenoid is de-energized. Use the hack saw to cut a ~1"x1/2"x1/4" block of wood. Use the below picture and wood carving tools to whittle the appropriate wedge.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEXafTBE3838iub4g2NI1AH1_9tPig-ZyD48P41ate_vUalXDqMzvd0qi6RzzYoGkR17-wktl6isZ6bcJNtaZcSOJ3PNkjgRNIoBjdfX5tHURFiLutRZBu8tSmVZu0TfQ4pRgNdWK8V2CJJNOjFjmnYrcg=w1718-h1289-no?authuser=0" class="img-fluid" alt="Wedge with overlay" /></p>
+                
+        <h4>Step 3: Prep the Enclosure</h4>
+
+        <p>Plan where to place the Arduino, switches, and LEDs. With the lid facing you, such that the lid slides right, mark the top with a pencil for the LEDs and switches. I placed the LEDs in the upper left corner and spaced out the switches equally across the center. With the lid now facing up, mark the left side of the enclosure for the Arduino. You want the Arduino's power port accessible but not the programmable ports. Otherwise, your friend could reprogram the Arduino to unlock the box. Drill 11 holes with the 1/4" bit.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEXiLcyiYfV8itpOBBmNNPA6pb7q62_HJo9gOzrH_0TkqvykMQaLGtf-Y7BdLjkzv8ICwJV_b1NkfUgtzO23SL7TUQe8EcUeYtIJ4SYccq17ydf1iAaK9BuMmnIG2aMxsc9TfYjc_fWciLXHFZyWq395qA=w1718-h1289-no?authuser=0" class="img-fluid" alt="LED and switch placement" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEWBRPqIolIUCSH-ACfMaAC3owAx512hgPnOUBLLhtrdcKO0HAg-j5LMVK6a_XgKbujLb2GTqG998HfELhEm2unpwVfCQ55Nsc_IaeC29yYid5heCyAnSh9jiRp_VSkK5fScTJHtcrSzdn0-VXawxuoyUw=w1718-h1289-no?authuser=0" class="img-fluid" alt="Arduino placement" /></p>
+            
+        <h4>Step 4: Build Switch Bundle</h4>
+
+        <p>Follow the below pictorial diagram to get an idea of how to wire the switch bundle. Build this outside the enclosure. Add heatshrink and then solder the switches. Remember to leave a little slack so the switches have no problem lining up with the enclosure. Install in the enclosure.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEWImn4zs72yn_El0X2nPLFLwCLgvhDslBdtzbuwhY5Qpgh2RhvdE4MDNGsxd11dGf_drsGpUISpQnzGzseZlxTm2sqTMpw8fbqHoLrksdPJdK7hF8QA5bT_EQKXzJ3rcuWkr9KY45-9-f6XRwLfHuKYeg=w1718-h538-no?authuser=0" class="img-fluid" alt="Pictorial Diagram" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEW3zWMRrJLL0IeZmAj9jye6lQJ9-rDKmyGJ6X5dmBSBN9KPJNzapyUapcPuzPVW2b8IFitJeSjEvf34ujpOSgj6tMA6TRuoOVlb70_jK0ajt9hcTE5lRLa18BGzUtOmc_R6YSnsBYqstR0U7J62Myr8fQ=w1718-h1289-no?authuser=0" class="img-fluid" alt="Close Up" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEXj8U5bOkLhVV76vJPXw7qYLKRaAsFkBagCQLE5J6ID75KVkpq8-2rShwQRmX77VSfDQaLucXu3VcC2Z1HCz5azxtSjTPXxAiq6oVfSx4EWAacdfmrmt6abXcKlu-ZeaSJxHYfVAinl4QHQsaXE6Z_eOA=w1718-h1289-no?authuser=0" class="img-fluid" alt="Installed" /></p>
+
+        <h4>Step 5: Build LEDs</h4>
+
+        <p>Solder the LEDs according to the below pictures. Note, the resistor is on the positive terminal. Use a third hand to hold the resistor and LED as you solder. Add heat shrink.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEVMERbyOH3MnU7No34jdI66ZVAYrvXTuha6QEsXsonRaCFvw0fwJ8S4pRiucw6mJ5BtfKruA1T4-EnPVgcVnABqEo3nWT21kNiFtlrZMWWao211g3SY1fHcvm9S_rXUYfEpP6ZlsfZy_byplaLB4301mQ=w1718-h1289-no?authuser=0" class="img-fluid" alt="Solder LED" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEWzLVeW8WeTGceHV5Z7GDUSBMpDycvskU9Lo1-8p-IRO8toqgHGn7KELh-IEbF1d9-vkfbBX7KwtZ4Leiy5pXTKyoA7pIrkLRb1oOuJPKfmFsE8RzBl42iq_EYrtQvikdY8Q9X4pSVOrBdJMTwXFHYMmA=w1718-h1289-no?authuser=0" class="img-fluid" alt="Both LEDs" /></p>
+
+        <h4>Step 6: Build Solenoid</h4>
+
+        <p>Wire the Solenoid according to the below schematic.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEUMtv-4_S1BmXQ4tIq8kH4aegshrhIIXEsWz08f4hdXwlxd601FltLSidgTujWusKpyRCZwySoBa-bdpnKaYivI2k3C9C5eS1KQG2TU16nyEgnD6cN9ht8GAWLTuniyOWE_KjkAJKynm7K0eURIeLMI-g=w1718-h672-no?authuser=0" class="img-fluid" alt="Schematic" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEV9VehzJ0XGdNTLCk7Y66lYZdjMinF-IH2HQhLx-S4w-kfGFcRELp1q-4IuX0rg9eR5Vz0h49xtSiveBE7n0DLz-tkCt_GxsR5uFySS9eGccUARWmJn8D3kkPLzUsYsFylG3DAumZtjxOBaz3Ll3aEI-Q=w1718-h1289-no?authuser=0" class="img-fluid" alt="Solenoid circuit" /></p>
+                
+        <h4>Step 7: Dry Run</h4>
+
+        <p>Copy and paste the <a href="https://github.com/sakeofmaking/Puzzle_Box/blob/master/puzzle_box.ino">linked code</a> into your Arduino IDE. Edit areas marked "EDIT" to create a custom morse message and switch combination. Download to your Arduino. Connect everything according the below schematic with the Arduino, LEDs, and solenoid outside the box. Test that it runs properly.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEW70WmkcSUe9M__x_HlfLwe86U8BfIkqTygq88H2RETK4fy-OkBKMpBdzyXimsF8CZ-1z0xnfbUYPT9vB7LvgFlFH7Wo4Cn7migG0MrX3E6DZTN6QLhzrWDID8QeOWRfsheeOF8p7e6oOZioNyqKbs9Gw=w1338-h1004-no?authuser=0" class="img-fluid" alt="Schematic" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEVsJpyGSp8fjDIr0tyhAlZMSFdxmJrwIFd5UAUtMdfJc1GFvD8JcANpgWe0VtOyt30R9Wh6it40G6xlhD8Zk8iw60wyaxMZiKXL4NlDQA_w7W1UlbU5XAdnVGLYZ6ja0K1KNYZ0HbdJQIGm8vuxcVRcmw=w1718-h1289-no?authuser=0" class="img-fluid" alt="Outside" /></p>
+
+        <h4>Step 8: Bring it All Together</h4>
+
+        <p>Install the switches and hot glue in place. Install the LEDs and hot glue in place. Install the Arduino and DO NOT hot glue. What are you crazy? Just tape it down with some double-sided tape. The solenoid and wedge require I little more finesse to install correctly. Use the below pictorial diagram and pictures to better understand how to install the solenoid and wedge. Hot glue the wedge first. Use double-sided tape to test the solenoid before hot gluing. I ended up leaving the double-sided tape for a better connection with the inside wall.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEWY8h3T4YdalcZgGjFgRPEU8hOVYCmZHyguulqC5kCnXxVDOtEWx3SDxvzZbr1NXtU31BRdGijBlkB7k9kq90Jsbq8n_fXtKPvR7vxSuz-UhTpL8gGxwy1cS9qzgRHP0LXGqp4Zly7_8sI_H5dxW4vn3g=w1718-h1290-no?authuser=0" class="img-fluid" alt="Solenoid and Wedge" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEWST7HDFE7YHIcpWs5JXTryl-e7SA9urehzOLI_IyvOr4O74xdJf6Uc3BshsYWsaTRyjTgU-0Dk99Wk15jzRzRnRctWz8aMNpv45KCuU8x0uSr2B-S_fR9NP_VKW11ldfvynurCW4Yr5EeQve8tb3WHFw=w1718-h1289-no?authuser=0" class="img-fluid" alt="Solenoid and Wedge" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEWXwT8lDx28zPm1ZFXaGAMOu65iQWbYqAHk2wA125D5x2-NWsi1nQpwdvvHgCVtmMO5ILIfZlJTPlQW9uq5MjpJPcNQMs-mhcvSEFBcbeyPqZNYyzu_DOZ_bjsgZajczoGZ3WWDpPYrITVDXwXNbdoK1g=w990-h1319-no?authuser=0" class="img-fluid" alt="Solenoid and Wedge" /></p>
+                
+        <h4>Step 9: Enjoy</h4>
+
+        <p>Place your thoughtless gift (the cash) inside, slide the lid shut, and watch your friend stress out on their birthday trying to solve the puzzle only to smash your hard work open with a hammer.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEW5ZDRcwvFTWJhHpQd0x6xHKYiz1P9ok5B_2N16-XHrNUjN1REnUiwkdYG9nXIfe_GrGQi_hMxIXAkEBNRCeDuOsUTnujjfmNBsP5sKmV16jlmDsYMl3LRFujVYJKf-48Y8Nevyv0cvOX0i1guy7ArAZQ=w1718-h1289-no?authuser=0" class="img-fluid" alt="Enjoy" /></p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

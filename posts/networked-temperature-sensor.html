@@ -1,0 +1,255 @@
+<!-- networked-temperature-sensor.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Networked Temperature Sensor</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Networked Temperature Sensor</h1>
+        <small style="white-space: pre;">Oct 13, 2024 |  Author: Nic La |  Tags:  project   code   3D print   microcontroller  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AP1GczPQ9sL1rIzHunSG3kooorY7qNEzuxUYZg2e4IXJp_Z9UPo1gSSzGKfD-BeRTGxzyhn71A40ykiyT8HwB2Nm0iKw1R9RXrsK58aBbQiMFuGLO5rfxIklkKMKzo2Aucy189BLLVTh4sSpZNosVENO2Yb0YA=w1696-h1273-s-no-gm?authuser=1"></p>
+
+        <p>More than just a temperature sensor, the Networked Temperature Sensor (NTS) integrates into your Home Assistant to regularly report temperature data and alert you of temperature events. I recently switched my home automation hub to Home Assistant and it is the one home automation hub to rule them all. It owes allegiances to no brand and yet accommodates every brand. Home Assistant's accommodating nature had me questioning if I could integrate my own home automation devices. The NTS is a resounding yes!</p>
+
+        <h4>Step 1: Materials + Tools</h4>
+        Materials:<br>
+        <ul>
+            <li>(x1) <a href="https://www.adafruit.com/product/5544">Raspberry Pi Pico WH - Pico Wireless with Headers Soldered</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/5907">Adafruit Terminal PiCowbell for Pico with Pre-Soldered Sockets - Reset Button & STEMMA QT</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/1443">16mm Illuminated Pushbutton - Green Latching On/Off Switch</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/550">Little Rubber Bumper Feet - Pack of 4</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/5665">Adafruit Sensirion SHT45 Precision Temperature & Humidity Sensor - STEMMA QT / Qwiic</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4650">Adafruit FeatherWing OLED - 128x64 OLED Add-on For Feather - STEMMA QT / Qwiic</a></li>
+            <li>(x2) <a href="https://www.adafruit.com/product/4210">STEMMA QT / Qwiic JST SH 4-pin Cable - 100mm Long</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/377">Rotary Encoder + Extras</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4213">Micro USB B Jack to USB A Plug Round Panel Mount Adapter</a></li>
+            <li>(x1) <a href="https://a.co/d/ayXKQCA">1Ft Right Angle Micro USB Cable</a></li>
+            <li>(x1) 470 Ohm resistor</li>
+            <li>(x1) <a href="https://www.adafruit.com/product/3175">Hook-up Wire Spool Set - 22AWG Stranded-Core - 10 x 25ft</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4559">Pre-Cut Multi-Colored Heat Shrink Pack Kit - 280 pcs</a></li>
+            <li>(x1) <a href="https://a.co/d/5S6HWpr">1440PCS Screws Nuts and Washers Assortment</a></li>
+            <li>(x1) <a href="https://a.co/d/38W1wAF">EEEEE M2 M2.5 M3 M4 M5 M6 (350pcs) Metric Threaded Inserts</a></li>
+            <li>(x1) <a href="https://a.co/d/6p179QY">OVERTURE PLA Filament 1.75mm PLA 3D Printer Filament</a></li>
+            <li>(x1) <a href="https://a.co/d/2uWdIm4">OVERTURE TPU Filament 1.75mm Flexible TPU Roll</a></li>
+            <li>(x1) Solder</li>
+            <li>(x1) USB A to USB Micro B Cable</li>
+        </ul>
+        Tools:<br>
+        <ul>
+            <li>(x1) <a href="https://www.home-assistant.io/installation/">Home Assistant Hub</a></li>
+            <li>(x1) <a href="https://www.prusa3d.com/en/product/original-prusa-i3-mk3s-3d-printer-3/">Original Prusa i3 MK3S+ 3D printer</a></li>
+            <li>(x1) Weller WES51 Soldering Station</li>
+            <li>(x1) LRT 858D Digital Hot Air Rework Station</li>
+            <li>(x1) Needle Nose Pliers</li>
+            <li>(x1) Metric Allen Wrench Set</li>
+        </ul>
+
+
+        <h4>Step 2: 3D Print Parts</h4>
+        <p>Start by downloading the enclosure CAD files from <a href="https://www.thingiverse.com/thing:6779595">Thingiverse</a>. Print using your preferred 3d printer. I used a Prusa MK3S+. Recommended printer settings in the link.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczPPcj1xeiL-z8SjAOWh4R_nW42zD_jUT8fc6lt3HsO_c7DcOYa6dKu0Ec03QV_BwP7HNcWNPYLxidChtT9Vre5f62RuCpejuhgB52MYrCmKM8ejSB7Yhdw7uXPsZfuncu4aIe-znRHIxh2SE5VPW8tJbw=w955-h1273-s-no-gm?authuser=1" class="img-fluid" alt="I need more filament" /></p>
+
+        <p>Once the parts are finished printing, do whatever post processing you believe is necessary. There shouldn't be much as the parts are designed to be printed without any supports. Use a soldering iron and needle nose pliers to secure the threaded inserts in the enclosure base (Part_Studio_1_-_Part_1.stl). The Pico mounting gets x4 of the M3 H8. The lid mounting gets x4 of the M4 H10.</p>
+
+        <h4>Step 3: Program</h4>
+        <p>While the parts are printing, follow <a href="https://learn.adafruit.com/pico-w-wifi-with-circuitpython/installing-circuitpython">Installing CircuitPython</a> to setup your Pico with the latest CircuitPython. With CircuitPython configured, add the following libraries to the lib folder on the Pico's CIRCUITPY drive. Libraries can be found in the <a href="https://circuitpython.org/libraries">Library Bundle</a>.</p>
+
+        <ul>
+            <li>adafruit_sht4x.mpy</li>
+            <li>adafruit_requests.mpy</li>
+            <li>adafruit_connection_manager.mpy</li>
+            <li>adafruit_displayio_sh1107</li>
+            <li>adafruit_bus_device</li>
+            <li>adafruit_display_text</li>
+        </ul>
+
+        <p>Download the project code from the <a href="https://github.com/sakeofmaking/nts">GitHub Repo</a>. Configure your settings.toml by replacing your_wifi_ssid_here and your_wifi_password_here with your wifi info. For now, visit <a href="https://webhook.site/">Webhook.site</a> for a "Your unique URL". Leave the page open for later testing. Replace your_webhook_endpoint_url_here with this URL. We'll revisit settings.toml with a Home Assistant webhook endpoint URL once we configure Home Assistant. Copy code.py and settings.toml to the Pico's CIRCUITPY drive.</p>
+
+        <h4>Step 4: Assemble</h4>
+        <p>Mount the Pico in the PiCowbell being sure to orient the Pico such that the USB and STEMMA ports are on the same side. Prewire the Pico with USB cable, temperature sensor and rotary encoder according to the below schematic. Wire the rotary encoder by first soldering individual wires to each terminal. Heatshrink as necessary. Install the Prewired Pico in the enclosure base.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczMxg3CxJqnSuQ5aW3cQqKaKlYUHp2LNOzKCB5Q5rDt3r4A9l68gjfprTX1_JfwGkzC7q4UWCP55jq6JZE0CW4ff7bY1uPm0IMPRV-av4B5t5pV0vRxaEaAihVML3ehKx4T1Mr0q74LdxpgRhhy1L8y9fQ=w1075-h1273-s-no-gm?authuser=1" class="img-fluid" alt="A Decent Schematic" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczODhg8BlybTuK75gVj0QImEmQ0JJ_uW8KiOtbxpuW5E57dNpGv9i6fO6vSkNjYrgqLc2o2A6YOnWElyBXzKJDcsRaeXmS9CnBG-0beOwty7A7a6v2mVv2XKJbC-URHXIKnb2biz3YwOIDkS-jebz28Hog=w1696-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Some Assembly Required" /></p>
+
+        <p>Prepare the enclosure lid. Reason I designed a separate TPU spacer for the OLED display is because I cracked the first OLED display when I went to install it. This is what a cracked OLED display looks like.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczP0MnYfhQtZEc8lONEzwDunIT9LdH8lNv9JO9Errvkhx9krJWH4ElpQUPEOkjnR4G0TE6VQKoPXrXNWk9AyaUpRAOrZgvxS3j8WTxReeOKNyGiL3QNzg4JXYztAD9ms8XjhRwF829R7bbmX7wkbHkC6FQ=w1696-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Sad Face" /></p>
+
+        <p class="warning-block">WARNING: Don't crack your OLED display. A cracked OLED display is not very useful.</p>
+
+        <p>Solder individual wires to the green push button terminals. On the negative terminal, solder the 470 Ohm resister. Heatshrink as necessary. Install the TPU spacer, OLED display and green push button in the enclosure lid.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczPhVSlleIxWW7njRXxTFFT1hIj_4qsIzDHwh6TnwTdf8emjHr7RNpC5P1E58U2SFp1qbHy_ErZwbQIeHeSWy7pB0iqn57PcE4O_vMQtanPxARmuS8ivWgWuPhtLMBFQR2AGJeYZvyoKmfTmCweOXkpG8w=w1696-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Happy Face" /></p>
+
+        <p>Bring it all together. Mount the temperature sensor in the enclosure base front opening. Use the STEMMA cable to wire the sensor to the OLED display. Land the green push button on the PiCowbell according to the schematic. Install the rotary encoder in the enclosure lid. Lastly install the USB panel mount in the enclosure base and connect the USB cable.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczNM_wJLwQMNV72dCddq80bY1h2rZWapA0jAfknnP2rm77fw8ahipoE94-Piz8SKz7aXe-6RhypVkK0-bDI0oj6nOte3CiQQGsbOcTAJooJzWtEOqEl7jh4S3i_kVR-yD_TndupGmRxptji-yVqx9kq2Gg=w955-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Together At Last" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczOdIE2wVOZLeydgVXKAYjKKQY2E1ezGUivDjDE6oOhWSZXXQM6Bezb0zmikQOmPPLBKSWolCMN-DGGtEHRNfhzr6L-tlS6u1cbBLYCI9L8MOpIURL5J7fXf6sadO7GPlvSCcJBeoybt0IKCRDucEeFnIw=w1696-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Sensor" /></p>
+
+        <p>At this point, there's probably not a lot of room left. Carefully tuck the cables inside and close the lid. Screw the lid down until snug. Don't forget to add the little rubber bumper feet.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczN2n4FnCuv91Iv-50m2V6mxj58dTX7cuSWN02pZNI1IcZz9uGxRADNWTiai83wbrAK1YPAqnwgraxVFu1a1mHgAbV8uwAGEpBsUZBlO-JXaZR0NiuoMd5LMfRQXYGZfg8BMlAI8Y8GTkFD-XoGDjs0laQ=w1696-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Batten Down The Hatches" /></p>
+
+        <h4>Step 6: Test</h4>
+
+        <p><div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Pr5coxktxRE" allowfullscreen></iframe>
+        </div></p>
+
+        <p>Test that your NTS is functioning as intended.</p>
+
+        <ol>
+            <li>On power up, the OLED display should report the actual temperature at all times. Place your hand against the sensor. The temperature should increase...unless you're in a very warm environment for some reason.</li>
+            <br />
+            <li>Press the green button. The LED should turn on and the temperature data should be reported to your instance of <a href="https://webhook.site/">Webhook.site</a> from earlier. Data example below. Press the green button again to turn off the LED and temperature reporting.</li>
+            <br />
+            <li>Rotate the knob. The Upper Alert value should change depending on the direction the knob is rotated. Press the knob button and rotate. Pressing the knob button should toggle between the Upper and Lower Alert setpoints. Change the Upper or Lower Alert value such that the Temp value falls outside this range. Return to <a href="https://webhook.site/">Webhook.site</a>. Again, you should see data similar to the below. Continue to monitor Webhook.site. New data should arrive every 10 minutes.
+            <br /><br />
+            Data Example:
+            <pre class="code-block">
+{
+    "temperature_f": 74.9,
+    "critical_alert": True,
+}</pre></li>
+        </ol>
+
+        <p>If all looks well, continue on to Step 7. Otherwise, rinse and repeat until clean, i.e. step through 1 through 6 again to make sure you didn't miss anything.</p>
+
+        <h4>Step 7: Setup Home Assistant</h4>
+
+        <p>You've finished making a device that periodically reports the temperature via webhooks. Now, let's use that webhook data to display live temperature on Home Assistant and generate temperature alert notifications on your phone.</p>
+
+        <ol>
+            <li>We're using Home Assistant because it has a built-in webhook server. This allows us to use the existing dashboard to display our temperature data, saving us from having to build a server and dashboard from scratch. Follow Home Assistant's guide <a href="https://www.home-assistant.io/installation/raspberrypi">DIY with Raspberry Pi</a> to get started with Home Assistant OS. Other installation methods will work. I'll just judge you.</li>
+            <br />
+            <li>Follow <a href="https://www.nabucasa.com/config/remote/">Remote UI</a> to setup Remote Access. Remote Access is needed to access your Home Assistant instance remotely from your phone. I used Nabu Casa because it's convenient.</li>
+            <br />
+            <li>Download the Home Assistant <a href="https://www.home-assistant.io/integrations/mobile_app/">Mobile App</a> for you respective mobile device. Setup the mobile app and connect to your Home Assistant instance.</li>
+            <br />
+            <li>Create a Sensor entity. From the Home Assistant OS > Settings > Devices & Services > Helpers > Create Helper > Number.
+            <br /><br />
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOJAa11BdU1gIhOkfaNHhu1YWrISu3-Feabiu_MUyaMcMkFGF2rAC5-ujBzXaLJmWvEbzJEGVtajY5Uajwlfk2GbDMxHJwsluGQiZPNdVdzDyau_mtBJFJHvjs5diK7tjLzdW254E2Ir-MBGUo-9CrHVg=w628-h550-s-no-gm?authuser=1" class="img-fluid" alt="Pico Temp Sensor" />
+            <br /><br />
+            Note the Entity Name "Pico Temp Sensor".</li>
+            <br />
+            <li>Assign temperature data to the Sensor entity using <a href="https://www.nabucasa.com/config/webhooks/">Webhooks configuration</a>. From the Home Assistant OS > Settings > Automations & scenes > Create Automation > Create new automation.
+            <ul>
+                <li>When: Add Trigger > Webhook. Note the Webhook ID. From the cogwheel, deselect "Only accessible from the local network" to make your webhook accessible from the cloud.</li>  
+                <li>Then do: Add Action > Input number: Set. Switch to the YAML editor (three dots > Edit in YAML). Copy and paste the following into the YAML editor and save the automation.</li>
+            </ul>
+            <br />
+            <pre class="code-block">
+service: input_number.set_value
+metadata: {}
+data:
+entity_id: input_number.pico_temp_sensor
+value: "{{ trigger.json.temperature_f }}"</pre></li>
+            <li>Update the webhook endpoint on the NTS to the newly created webhook endpoint URL on Home Assistant. From the Home Assistant OS > Settings > Home Assistant Cloud > Manage (next to your automation's webhook). Note the Public address. From your settings.toml on your Pico, replace your_webhook_endpoint_url_here with the Public address URL. Reboot the NTS and press the green button to trigger the webhook. From the Home Assistant OS > Settings > Automations & scenes, you should now see a value under Last triggered column indicating that your Automation is receiving webhook data from the NTS.</li>
+            <br />
+            <li>Display Sensor temperature data in a Sensor Card. Go to the default dashboard or follow <a href="https://www.home-assistant.io/dashboards/dashboards/#creating-a-new-dashboard">Creating a new dashboard</a> to create a dashboard of you own. I'm partial to the Tile layout. From the dashboard, edit and add a Sensor Card. For Entity, enter "Pico Temp Sensor". For Units, enter "°F". Save. Wait and watch the temperature data flow in. Look at all that data.
+            <br /><br />
+            <p><img src="https://lh3.googleusercontent.com/pw/AP1GczOL0gWk6Hy89jHXcL_VCT_y5Uf3GHFw4iIn3vSoCV1_Ed_rQQOrCS0TfpiODTbbInaJGMxT8zXKxh9EDh7CkRetM4kM4E4QYre9Qxc59JSs5h2yKpSUt56Q38TU8nWgY2OwQdg8eCsyrkh7e5pBwK-Nfg=w2558-h795-s-no-gm?authuser=1" class="img-fluid" alt="That's Nice" /></p>
+            </li>
+            <li>Setup mobile notifications for when the temperature reporting is first triggered. Earlier, when you setup the Home Assistant mobile app, you also add a new mobile integration to your Home Assistant OS. You can now use that integration in Automations. From Home Assistant OS > Settings > Automations & scenes > Create Automation > Create new automation.
+            <ul>
+                <li>When: Add Trigger > Webhook. Replace the generated Webhook ID with the Webhook ID noted from the previous Automation. This way, the same webhook data is parsed by both Automations.</li>
+                <li>And if: Add Condition > Template. Enter the below in Value template*. This parses the webhook data for the alert flag.
+                <br /><br />
+            <pre class="code-block">{{ trigger.json.critical_alert == True }}</pre></li>
+                <li>Then do: Add Action > Notifications: Send a notification via your mobile app integration. Enter a descriptive message. Something derivative like "Temperature Alert!".</li>
+            </ul>
+            <br />
+            Reboot the NTS, adjust the Alert thresholds, or press the green button to trigger a temperature notification on your phone.
+            <br /><br />
+            <p><img src="https://lh3.googleusercontent.com/pw/AP1GczOuKHFkfjEXLM8UeH1KsZqs7LzGQOVS6GvC-rdC7_BP1apEdKsbyWwr07JziDybxuKJIhiwsTvwt0s_qJ13Jvxh0YQcHwAxGVMua67QllhWYOXvcemzEjlKewutbFtl-IOA7AXbR47m_NMBnbNRI21aMA=w588-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Temperature Alert!" /></p>
+            </li>
+        </ol>
+
+        <h4>Step 8: Enjoy</h4>
+
+        <p>Enjoy. Place the NTS on your prototype project to monitor temperature over long periods of time. Place on your 3d printer if you're worried about thermal run away events and filling your apartment with smoke. Place on your bonsai to know when it's too hot outside and time to bring the plant inside. Go wild.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AP1GczNnxwTrTjuszRxkTrDQ7MfewwxweNEYvtIoyL3s_816BasChMWEmOAejwgdxmiSuFOzc2-MLpCuuI7B856lZewyaSnPc7dELe2l8TMOXgGgGqKTNAOEYp7ms6slzmsUjEADxku7dR5NN9U_zzaNxE5FbA=w1696-h1273-s-no-gm?authuser=1" class="img-fluid" alt="Happy Bonsai" /></p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

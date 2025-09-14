@@ -1,0 +1,176 @@
+<!-- mobile-whiteboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile Whiteboard</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Mobile Whiteboard</h1>
+        <small style="white-space: pre;">Nov 20, 2022 |  Author: Nic La |  Tags:  project   wood  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AL9nZEWHIt5Viw8MOGArSqwDvWTi-Ugy1oCOouJB1b-T7BcYn7ijR2FWaKdwsddH9YMqtDxl9CtSjStASb37GYArFGm0KJD5o5nUEcCsSrDs6hjOb3roTY1FVxiMELbVejLE0YN1Iiklf1de0QmP1WknimHypA=w1718-h1289-no?authuser=0"></p>
+
+        <p>Not everything is easily explained in words and there's never a whiteboard where you need one. The Mobile Whiteboard is a whiteboard on wheels. I had a white gloss Ikea Linnmon desk, but I needed a whiteboard. Some iron pipe later and I no longer had a desk.</p>
+
+        <h4>Step 1: Materials + Tools</h4> 
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEWErtrYOPZBlQ3GBN59g60M8wQtLj80Zy0ofAy15jqugLBHmkHMA2Vr_-2b-DLbNG2yjhMeVfI3arL5Ln--E_yPxVyh0KfwCTU6kaZCnPgya0zf1bLht590rzFWJKqZ7ZvGs9yPuAC_1JV-4B7W6Ybc9w=w1718-h1289-no?authuser=0" class="img-fluid" alt="Materials" /></p>
+
+        Materials: All pipe is 3/4" galvanized iron from Home Depot<br>
+        <ul>
+            <li>(x1) <a href="https://www.ikea.com/us/en/p/linnmon-tabletop-white-00251135/">LINNMON Tabletop, white, 39 3/8x23 5/8 "</a></li>
+            <li>(x6) 90 degree elbow pipe</li>
+            <li>(x4) tee pipe</li>
+            <li>(x4) cap pipe</li>
+            <li>(x4) 2" pipe</li>
+            <li>(x2) 6" pipe</li>
+            <li>(x2) 8" pipe</li>
+            <li>(x2) 36" pipe I had cut as part of a 10' pipe</li>
+            <li>(x2) 23 3/4" pipe I had cut from the same 10' pipe</li>
+            <li>(x4) <a href="https://www.amazon.com/Shepherd-Hardware-9073-Plastic-Furniture/dp/B000XZI1W6/">Shepherd Hardware 9073 1-Inch Plastic Furniture Socket</a></li>
+            <li>(x4) 3" diameter wheel with 5/16" diameter x 1 1/2" stem from Home Depot</li>
+            <li>(x1) gold and black Rust-Oleum spray paint or alternative paint that bonds well with metal</li>
+        </ul>
+        Tools:<br>
+        <ul>
+            <li>(x1) electric drill</li>
+            <li>(x1) 1 1/8" diameter bit</li>
+            <li>(x1) crescent wrench</li>
+            <li>(x1) ruler</li>
+            <li>(x1) pencil</li>
+            <li>(x10) wine cork</li>
+            <li>(x1) painters tape</li>
+        </ul>
+
+        <h4>Step 2: Paint the Pipes</h4>
+        <p>Spray paint your pipes according to your preferences. I chose gold for the joints and black for the pipes because those colors go well together. Tape and cork the pipes appropriately to avoid painting the inside of the pipe.</p>
+
+        <p class="warning-block">WARNING: Only spray paint in a well ventilated area like outside.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEXKirbyXrugQTccxYNoImGKdMEfzphvxX4ZkRbnOMlOAnH_QOdcMmsge7KXidA8ZzbJURhY2Cllo7F9UVvAO5vzQhA_JPZONL6447IlpnXddC-c7uugzlmXU-fjKy0e6RELnkSb0Isbj60G-aPAB7ZDaw=w1718-h1289-no?authuser=0" class="img-fluid" alt="Gold Pipes" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEUMadAhA7pdMZq07P4jM0U7bOyNqeiebuL540f41b7yJzFLy0N_sGzai0lrI7dd0f5o09ccLgFfOKj8X54WVMjgcVMyhJ6VXTWH9Ck4LTUe17ZcwluDU63BI3V6NJwewlcYc4xRF1cgdDQa_N5M2sAMIw=w1718-h1289-no?authuser=0" class="img-fluid" alt="Black Pipes" /></p>
+
+        <h4>Step 3: Measure Twice, Drill Once</h4>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEXV2ghUNCsGIw_AYR8OBwE1b-TO9KsWhFiWtSeIr8BVlYcD4up2k--oz4MmBrWQCK9YAUCCWo0KE7nLJmMA5K9Y7SDwkuqyikO6TGBxioPpKaONRnToqyoeOMSOM9lHd-VyAELeSpDdCDKa3Lf9hFQDGQ=w1718-h791-no?authuser=0" class="img-fluid" alt="3D Model Back" /></p>
+            
+        <p>Before drilling, measure twice. Assemble the pipe backing. Account for slight variations in the pipe length and mark the back and front of the tabletop accordingly. Begin drilling from the front. Drilling from the back first could crack the glossy surface in undesirable ways. After drilling each hole, check that your pipes still line up with your markings.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEVaI0uYVsc9pt1Vm6IYyvHfy8jXbgFOgVDiaWhRT9Z6xMQoZmK774e4rogPwl37igFcTLTeg0X0widwiB6mwLmiMxdkkMRaZb90NsNxr47sk1AKODvd5O_ZahJNbcgpdZRt9DvvtZd1Oqn3SO8RKYwLVQ=w1718-h1289-no?authuser=0" class="img-fluid" alt="Assembled Backing" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEWinHOTJXP6tcevHW32liJD1Jok7kbav7_2_TrwtZmWOZJlPYfSrgleHoDTk7gKwIDrjSqbHmvvIMY_iZAdRWN8aBAKi87mTNeRgTnvhC431SDIeiOmiTrE0NlqFrbNnl8WWnfcQb73Y9D-EAA_s6gebg=w1718-h1289-no?authuser=0" class="img-fluid" alt="Measure Twice" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEVPWFLdc5kHmgYD74YMo3y4RWVb1PCjzo1akWRrHyYDCtZNfBjb16XZEhLqPigzwXfblRBaRGvweQgJ03yBE-xWYH20LaHsEL378fhPgW5IeWuoZUFTXLDCP9mKX3Bs4wiBJCgfKuNAczGP0y1ZKNtywg=w1718-h1289-no?authuser=0" class="img-fluid" alt="Drill" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEVOsUmcXbBRJ1qJ0E6PfQLyPjWVKFwQP9m6Jnayw_oj85l0yT9CcGQlwErgmgLDpgggOSh5Mk4tbZ1yer3oym6o6VpzF9l4WqBoqkwoFblZ-cH3bf2kmASNjOef-b2PH6uhOLBJqhplt7tBcBmV0qtpAA=w1718-h1289-no?authuser=0" class="img-fluid" alt="Test" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEXmKnzoEJbFuAsjXdF8yAmLVWUfYp-3w4bMA0hbitt60PJgZaDtSXfe3X6yYs3B_zLXvLMhx-KPQBuzawTYDnzQQhULptqpbC8QeXX24DqLT1BHwMIZTqY7U269Kb9g9V4kqL6et6ZH37U4EgRd69r-PQ=w1718-h1289-no?authuser=0" class="img-fluid" alt="Done Drilling" /></p>
+
+        <h4>Step 4: Assemble the Frame</h4>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEV2pCwRtLto63DpO051_LedvgeYPzutXI5P4iiJWfG9uI5TrfimSCMz2rM0cYv-7ZDqy4JOfkp7LkZYt4GnKad8Ncx4sGtpCpm52vzR9_mjkqNaGNgSeG0TRM5hUCbnWodjr90aAZdp8dxJBHaYMwZ0_A=w1718-h866-no?authuser=0" class="img-fluid" alt="3D Model Completed" /></p>
+
+        <p>Stand the tabletop on its edge and fasten the pipe backing securely with the caps. Lay the tabletop on it's front and attach the 36" pipes. Place a stack of books under these pipes to raise the bottom ends and attach the lower piping (feet). Push the plastic sockets into the feet elbow pipes until snug. It's okay is some of the plastic is exposed. Screw the wheels into the plastic sockets and tighten with the crescent wrench.</p>
+
+        <p class="warning-block">WARNING: If the elbows on the feet are not tightened appropriately, the whiteboard risks falling when placed on its feet. After installing the wheels, use the extra leverage to further tighten these elbows.</p>
+
+        <p>Lock the wheels and stand your whiteboard up. If your whiteboard is lopsided, it's probably because of variations in the pipe length. This can be corrected by adjusting the appropriate wheel thread engagement.</p>
+
+        <p class="warning-block">WARNING: Whiteboard is top heavy. Recommend placing against a wall.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEViVWZX09b3HmmP4Gpt_BV5_CNXae0jbgIzfDlVzrMoEPz6ediCUJW0Kdiyh65iBYvNgXWmiD6lrdgVAXPQnzXHOpG6Oa_IrWpnqLW-fI4WSB5S_GR_5g7UIJ3bkV5xApA1rFRZ9lN_yKSNdhqdz0jfBw=w1718-h1289-no?authuser=0" class="img-fluid" alt="Backing 1" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEXVtaVjBZrE64JoYI-YUYdyE2k_NRB1yVZ-nZGuB1vM6UhxZwEEMENnnu8n4RZQpeISmfUQ1kJYMMpJEIK7gx4We2tBZSZkNZTB74hgEfLn-dg_SHa8uF8Jkg90Om-fgOtunYuzGSqATwzqOnSTYvndRA=w1718-h1289-no?authuser=0" class="img-fluid" alt="Backing 2" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEXOJeGBGPfzxt7lHEGJ0GxqZfECZu0PZ5JESZBx1nPRi8jvlpZU6AsOZfgsttHPlMZD_v7K8ioRYMtc04NpdZmCa5AmlKiSDvBWG_14uID8-2tiEK5lg7t_wn5KrmcbHqBShBTQ_F5vrBxDZIL1uKsx0A=w1718-h1289-no?authuser=0" class="img-fluid" alt="Feet" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEVrjOgYNJyNx6SS-vLJxKN3hMy6RlBNtZ-uGloBYovUHWtw2JDljD_5A0xTZmIUd8mkNcY95k8VO2oUkt4CDB99XEV5yWdWVJYv27R5vfngcglIzzAO-PygUvxBFla2dY5iltOkmsofVp5PwJqxv6IoFg=w1718-h1289-no?authuser=0" class="img-fluid" alt="Plastic Sockets" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEUL3Di_-BGObmB6ANTMSrniJeBfpku4WVGEsjwb0qqGnOCDKFSqGUcQ87bddquVLt6N8yD5kefkOb8uK1ROAaUf8nioMsDqBmkLUo708lZ52V-3IX5rFJuqjwA9di2YwsZIZMcPHR68HBwfDI-Vw9tFrg=w1718-h1289-no?authuser=0" class="img-fluid" alt="Wheels" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEWy50ROIvnatM6N5KXbM254lSczZUBbYUdF6sR_8-HNTbcq_hIJo_MKPjWRMO9vhbLx5YYO_B7uhz3wF65XwYwZKNWaWZn3QyrxrjlMQn7aPjbQ7HwbP7cENrS0CmT1ZnXu4GBKWEufKTKwHm6U-lTYjQ=w1718-h1289-no?authuser=0" class="img-fluid" alt="Locked Wheels" /></p>
+
+        <h4>Step 5: Enjoy</h4>
+        <p>The next time you're at a loss for words, use a whiteboard.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEV6xptuPalLDDCgGRpnph95oAt38ZgeJ0kecYXiYpd1_Yw0-wypVefPTnW7Wx_iB9egUwUM72qgB-ywiiINakWFsM2FH2BmAFnMSi47ne5PdhBF0FSq9lVqz_Qw32FOrEhFwAuwyXYu-MMsP2I__O23YQ=w1718-h1289-no?authuser=0" class="img-fluid" alt="Mobile Whiteboard" /></p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

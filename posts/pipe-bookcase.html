@@ -1,0 +1,208 @@
+<!-- pipe-bookcase.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pipe Bookcase</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Pipe Bookcase</h1>
+        <small style="white-space: pre;">May 8, 2021 |  Author: Nic La |  Tags:  project   wood  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/ACtC-3ebSpvsCWQvMndq7vT9_4bIbqZnu2XdiGL2xD7M7S5tj_5OxPlPDyLATUK-1fjLt9kPpqkrWzgWGTGZAcq3KtIxi6-sy7VO6RyPDcgmkjlwgjNS-IGJW5Ad2-qGYbD_iufb-JgHg34mOD9E130q7S96Lw=w1721-h1290-no?authuser=0"></p>
+
+        <p>The Pipe Bookcase is an industrial modern metal pipe and wooden board bookcase. I needed to make more room without relocating and the best way to do that was to build vertically. The Pipe Bookcase was built to be big and sturdy. I fear the day should I ever need to relocate.</p>
+
+        <h4>Step 1: Materials + Tools</h4> 
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3eILa2HnoeKdq4CGnI0MMgvvrQkSjv4ZH3kmfOPasLg-gDGpu5FUV39HXccv9Vi0saMFZ7-oXXH91pgZmoUqPQDY0qVzV62TVGTmETlrPMmzisnysVlIGYjA_Uwf2X0rlSGD2Q40iRpoU252ur04gzUrQ=w1721-h1290-no?authuser=0" class="img-fluid" alt="Prime Doug Fir" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3f7jmoui0gHsdcg0yjTWc5IFIsIE6CfDG_hAqJKZs2BixY3FKUmyjXwqYrCRGZDbDBerFLgpOt1dtLauZiy8Jetwqba6zTCUpzcbMnJtyHU7z5wpw_D_ngc6ssQuvWHYWgHv7D5TIK9XjdKypFpX_xERw=w1721-h1290-no?authuser=0" class="img-fluid" alt="1/2 x 12 nippl" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3egAZr7s4mo3F4hD1T9wO6uJ1Ihxp-eWptqlMK0RJwsoq5eP2u4ExgF7tR8u63kn-GS-9qoD6G0m1P7sGKmXfhQjXuIvOBO94NM0ddBhScXfd3NLfW11INMhaKkqjjWdpZefSmBgq4eVsYlYs2xwg4jhg=w1721-h1290-no?authuser=0" class="img-fluid" alt="1/2 flange" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3dVG4yx2FHPZkIGaWbBxzvPa-DkUIj8khKBBDh27UiDZLNqf5AIpAS2qpMn4f6PAyUrlNtlcXGj1qRs9ntmrpDOQEeUV7dmnjpqLs27DWC7s5YYibZiybRjOUK6y9AMXTPqemiS_q-6yutGzm4rPxWJEw=w1721-h1290-no?authuser=0" class="img-fluid" alt="dark walnut wood stain" /></p>
+
+        <p>Materials: All pipe is 1/2" from Home Depot</p>
+        <ul>
+            <li>(x1) mineral spirits</li>
+            <li>(x1) trisodium phosphate</li>
+            <li>(x18) 1/2" x 12" nipple (dimensions: .75" OD, .5625"ID, 12" L)</li>
+            <li>(x6) 1/2" x 2' nipple</li>
+            <li>(x48) 1/2" flange</li>
+            <li>(x3) seal tape</li>
+            <li>(x1) concrete sealer in a spray can</li>
+            <li>(x3) Home Depot 2x12-12ft Prime Doug Fir (dimensions: 144.375" x 11.5" x 1.75"). These can be cut into two 72.1825" boards at Home Depot. This will leave you with one extra board. Pick your ugliest board. This will be your test board.</li>
+            <li>(x1) dark walnut wood stain</li>
+            <li>(x1) 3x coating polyurethane</li>
+            <li>(x1) sanding sealer (optional)</li>
+            <li>(x1) dark walnut wood oil (optional)</li>
+            <li>(x192) wood screws size 12 x 1</li>
+        </ul>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3eFtUdsZrJg50TxpEfiyOHxUjIxaqDuKKeby0hnok14wmTnsE6VCZ4zumC8Nm4WcO4SnAL0oa5fZgL8OwTj0xk2r5ojCsaeogRZCSk9k11qKq-3zsRwpLpxuQD_QwoO4TNyNqXjOUO2j4TeEu_Ndt7yKw=w1721-h1290-no?authuser=0" class="img-fluid" alt="Orbit sander" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3dANmcvSaQ7n-I58qGf8lnuNMfVy0zcUpnIFlGRPzCC74NDHSOEEPqHUI4foJ__iabYmxqr1eGO0xKu2psrJmJTd90cSHUB3NntA9j4WUmdfCw1dWsXQaHyOyU0sioXxBcdmCESjvrM5ykLLAuNteroyw=w1721-h1290-no?authuser=0" class="img-fluid" alt="Wiping cloths" /></p>
+
+        <p>Tools:</p>
+        <ul>
+            <li>(x1) scrubber pad (sponge)</li>
+            <li>(x1) 5 gallon bucket</li>
+            <li>(x1) thick rubber gloves</li>
+            <li>(x1) N95 respirator</li>
+            <li>(x1) orbit sander</li>
+            <li>(x1) 220-grit sand paper</li>
+            <li>(x1) putty knife</li>
+            <li>(x2) sponge brush</li>
+            <li>(x1) bristle brush</li>
+            <li>(x1) electric drill</li>
+            <li>(x1) screw driver</li>
+            <li>(x1) ruler</li>
+            <li>(x1) tape measurer</li>
+            <li>(x1) Phillips bit</li>
+            <li>(x10) wiping cloths</li>
+            <li>(x1) stepping stool (optional)</li>
+            <li>(x1) canvas (optional)</li>
+        </ul>
+            
+        <h4>Step 2: Clean the Pipes</h4>
+        <p>Follow Lowe's Instructional Video below on how to clean your metal pipes. Begin by donning thick rubber gloves.</p>
+        <ol>
+            <li>Use the putty knife to remove any stickers.</li>
+            <li>Use mineral spirits and scrub sponge to remove sticker residue.</li>
+            <li>Use the 5 gallon bucket to soak your pipes in ~0.5 cup trisodium phosphate / 2 gallons of water. Then scrub with scrubber pad to remove grease.</li>
+        </ol>
+        <p class="embed-responsive embed-responsive-16by9" style="border-radius: 5px;">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zUxhrHjXItM" allowfullscreen></iframe>
+        </p>
+
+        <h4>Step 3: Connect the Pipes</h4>
+        <p>Each pipe gets two flanges. For a level shelf you want each flange-pipe-flange stack to be as close as possible in length. I made a few loosely connected stacks and measured their lengths to find an agreeable length of 12.4375" for the short stacks and 24.3125" for the long stacks. With lengths determined, connect the flanges using seal tape for a tight fit. Measure, adjust, repeat.</p>
+        <p>I left my pipe unfinished for greater contrast with the dark wood. Still, to help protect against the elements, I sprayed my pipes with concrete sealer.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3cDqhVWQz2jjYsJHe7-BqwXu1nO7ilthkuB0L38g0l2_LJvt1StD83q60WL168gqaseckPjTbJjgZXsoRPxnccApxbI2kZD9eP-If9bOYzy4NfT5Kb1vlrwz0hgAkKLOaNJJnA8bVbZtKu70ElGyC0Oig=w1721-h1290-no?authuser=0" class="img-fluid" alt="Flange-pipe-flange stacks" /></p>
+                
+        <h4>Step 4: Decide on Style</h4>
+        <p>Follow the instructions on <a href="http://www.familyhandyman.com/woodworking/staining-wood/how-to-stain-wood-evenly-without-getting-blotches-and-dark-spots/view-all">Handyman</a> and divide the test board into different sections. Each section receives a different style combination. I wanted a dark walnut style to contrast with the bright metal pipes. I decided on the following: orbital sander, 1 part seal mixed with 1 part water, lightly hand sanded with 220 grit sand paper, dark walnut stain, dark walnut oil, and polyurethane. The orbital sander smoothens the rough Doug Fir. The seal creates an even surface so the stain won't look blotchy. Lightly sanding by hand removes some of the seal for a deeper stain. Dark walnut oil adds a little color and shine. Polyurethane creates a protective coating.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3ddiAuDF-wE1zbfEXGct7V-L0EiUAIYPmE5e4rrvIXY0hSULyswa68dOxSU8LspsTKGwvoFGgKFxc1mKRIQejnGKa1iaYhx_I2F9xSZU63wxo8x5DbYRwlt07qJv8LTBLY_ttS-G04TvsYbgWvyuWLZsg=w1721-h1290-no?authuser=0" class="img-fluid" alt="Raw test board" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3cSG7QcfHKWgYvwrocRNk8Ww4yYLR2IObdAE2XhEKjmmjy5Z9g7aZ8Yh89p86rQQ3UBuUbjYtzkBbLmpwlCDboQmJX8amIJK6caWMsbIikBLx2pJH4JixgjLyjf8XfOjMPj-ZxTqt2Dx-qxdc5weB0_Sg=w1721-h1290-no?authuser=0" class="img-fluid" alt="Test board" /></p>
+                
+        <h4>Step 5: Style the Boards</h4>
+        <p>With your style combination in mind, style your remaining boards accordingly.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3fVuRYlhNo3VAgxlPhlDGNRPKJlwfAIqaL7w_moFOa9Ckn-9isZOUWp-gzCXU_FP6_FKM-mikFpG2sdW7qEy8VawtXvGpgNl-r5QCT28oPVCucbQs1N0T8ltCnRCKKCpuV1pGGHsKojgPUBU5xfSknsyQ=w1721-h1290-no?authuser=0" class="img-fluid" alt="Orbital sand board" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3f9A9bVnngyk1adjqL3O3A_3rEzGJSQm20KU9M0pbLAW7HfFuLA_heCX2-5Ci_ARMYCI15Kbqk-vYmm_WLAjigQL9QOl-JQA2cJQOukyIPvVz2M06-Emz0Hh0Oc7aqo5-0UT4Fn6PGLVTLLWvDlPqZBUw=w1721-h1290-no?authuser=0" class="img-fluid" alt="Seal board" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3cyBqG3xkoch1Rh_11qHCni3SRpb-AdoUHBSoLZqCTYLYG3nnMyRkvCwna1DZmjY8KxEubHI5ZEvfIntcjkupI6GRL4QfFD_wfr-oYns-vMn56w13zPkIm18tWP9jZU4UlflRnfgkFzdjgzWz-s4iVSmQ=w1721-h1290-no?authuser=0" class="img-fluid" alt="Hand sand board" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3d89m97j-8sl52T4FvvdFOnWs8fSm8PszFLVKFeOIUmtlJZCqe3Z-UlpgV6hWrWktUJhXAsagnrxHrtVFkb_vSJxuy9pKVHRkBQ0nmODyeKibyrrlXMcc962vKk4XVQ3QOTlLxSF9IMjDJ1GXHLlapnhA=w1721-h1290-no?authuser=0" class="img-fluid" alt="Stain board" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3dNhJmoBUhtaN6j8T8lU1sVsKnJABTrPWXjSvcGpXN431JVXvyXIQDExypR8-dt7RS4j81VrY8nniuIbcN3AkGIQi1MTJq348gKbi7caga9SGF5WUd9sOTgqcATFJIIxPjV9QKXgOcDUXNQ_EzXLG4m4Q=w1721-h1290-no?authuser=0" class="img-fluid" alt="Oil board" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3embY53qW5eC8eLOraboQ1RhNIgSMdbbTc0Xk1Fncl0U2FIgQcyht7fFBxKxO6lnoefzOQrRK-Vfvh8wjj6vE9niG5JhdoqhOOmPWHpMNUPi3K_oNoxRQR48OVJ33kbAsINPYJNAeL42bRxN5vS7v2ELg=w1721-h1290-no?authuser=0" class="img-fluid" alt="Polyurethane board" /></p>
+                
+        <h4>Step 6: Assemble the Bookcase</h4>
+        <p>Follow the below AutoCAD drawing, minus the top shelf, to assemble your bookcase. The top shelf would have been too high. I placed each flange-pipe-flange stack 0.5" from the board edge. Use the screwdriver to set each screw. Once set, use the drill to finish fastening.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3ex1iDzQSY2d_80PKHQJkEwO4Rmc5y15PNihKNlRAy2i6bxKiaC6uVEVcIlK1guV7ralVh5g_UrEgClRNYO9ZLy0TnnTRs_JJO3nPEufGEVuJ3oTGzCkTZyuTmPXnvzrarfAajk5zYvpof8AijASpqmsw=w1126-h765-no?authuser=0" class="img-fluid" alt="AutoCAD drawing" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3eU8s-yH8d-fSGnplpzUFdSc7qKyzj8PYDxFDndHEi6JH8oqHvrc1UeaorIzoe-cg_SiQ67t8k-z90y7Y9CsPMtHbulJ9LzYRectwEGGbNWXS_x1dz_k1m5oIR5gs_cd9TBWs4qMBZ49qwxTG5W_wQIjA=w1721-h1290-no?authuser=0" class="img-fluid" alt="Flange placement" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3egME46th2mMa2A3ovsI8OoPVwnmYoMjksXNeDq3XImPZZVmYiIImMofClMhpFgemfO1AfqOGtVYtlJ9Z4_dYYzCJfH8cf61IPN9M7U-cfJMdiSQMmOFUjzxw9xAw5QUDSqCdv19gmjjz0bn1tknZOg3w=w1721-h1290-no?authuser=0" class="img-fluid" alt="Shelf 1" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3eQ1QVwN-u0LrJxeGpCyrl4xXgtsnx2fvg60Zrf0KX2gz4zP2ExLQld77aSRFWVKoPPYrgBI6NGVWuVEUMQ8wiBH3ENWLIHxZYuJNpGt8eWtd5merdt3IxscjbZ2i-3FE3WCxZfxftP0FiiCeB4p_2bVQ=w1721-h1290-no?authuser=0" class="img-fluid" alt="Shelf 2" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3esF64afOAKBg7zd1IITSfaGwgmRGy3FnHiErVBSsF59ZWNvtLMPEf_-Yzx8Gy9TFm2GnC_RT5WUnh3NVto0v7agbggRKP6sbiYu4qAJISS9Mkbbq4hxWzvrW_c1Pz7bRfB-jo_jECC_76sOk4V05SpCw=w1721-h1290-no?authuser=0" class="img-fluid" alt="Shelf 3" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3fazqQ1j8xFMqYzf-yFMyGXclutigda-V6geLGx4qQ1BoUe8pox_cvwTCB3pm6_4rXZA0nOna3j62ITnM0CYWympg2PpQoD6ZUtqA5Q7s6HBEhwQ4LSctKABjPXv4ADdSxN0T0axhh1OfxtRqJvIB6MYA=w1721-h1290-no?authuser=0" class="img-fluid" alt="Shelf 4" /></p>
+
+        <p>The second to last shelf, I came across a problem. The wooden board was warped. This was further amplified by the pipes. Using an old pair of jeans and another pipe, I slowly drew the pipes into alignment.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3ciBj9hoYs1Wf9bZ9FTY24EQm8hS0hLAjUOeqgpS2nNhsP03EBNqEXnIPNZbmNHKTRjlKY0BOUSz-xGnfaLX7_nwUl7-oWKnnmiDKBVSTNxGH2tJJCXQHzMGGlxAiDkbedsrkTmYWCFAanwA31tNuU-1g=w1721-h1290-no?authuser=0" class="img-fluid" alt="Blue jeans" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3ci2rAjzBKx9dJyGXe1aLNkIJulkJE2-Jng-RmjLdr_Oxp3iDbIli5prz9-1Hhs8RYC0LHhRuQ5fsddAB8FBwilulrQBHv9fs8xGF2AyYby7HEQNdq_x7gScmXKppIyMujtJiJl08FPLhHtxJnYiYakjA=w1721-h1290-no?authuser=0" class="img-fluid" alt="Shelf 5" /></p>
+                
+        <h4>Step 7: Enjoy</h4>
+        <p>Populate your bookcase with books and things.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/ACtC-3ebSpvsCWQvMndq7vT9_4bIbqZnu2XdiGL2xD7M7S5tj_5OxPlPDyLATUK-1fjLt9kPpqkrWzgWGTGZAcq3KtIxi6-sy7VO6RyPDcgmkjlwgjNS-IGJW5Ad2-qGYbD_iufb-JgHg34mOD9E130q7S96Lw=w1721-h1290-no?authuser=0" class="img-fluid" alt="Populated bookcase" /></p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

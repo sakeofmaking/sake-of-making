@@ -1,0 +1,148 @@
+<!-- moonlighting-lamp.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Moonlighting Lamp</h1>
+        <small style="white-space: pre;">Oct 23, 2022 |  Author: Nic La |  Tags:  project   code   microcontroller  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AL9nZEV4MZ8FSY1om7kYad9dRWmvjWlO7wblZmIU-qRPADic1BGAEvta0OiOumSH5BsTrs1dHhs6TOijmVuHq1fNoEqJAGM8gpm6Rcc0_ixwEz60tjAEJzz9QD5Vp_kETHw4s0xyHeJHtm6ifOPf9JUFseaxwg=w1718-h1289-no?authuser=0"></p>
+
+        <p>Moonlighting Lamp is a glorified nightlight that changes brightness based on proximity. Most nightlights use a motion sensor to detect someone's presence and abruptly turn on. The Moonlighting Lamp uses a proximity sensor to detect someone's presence and calmly illuminates as they approach. The light is only as bright as you need it.</p>
+
+        <p><div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IztoX6Cp2nQ" allowfullscreen></iframe>
+        </div></p>
+
+        <h4>Step 1: Materials + Tools</h4>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEVDCWbHa8Rv2ZX2zGGvttmbSbCYL_aTOiRZxfDYaUCD49rluzyaRwkzLH8d0tceFHPCdFlimNSEpj223b0sA4ivolA8X_qWLNGnLwIXOwDxRDfA-Bs86kNmjGim2QRFmvC7DUD7dySXQYnsns7ciSKNaw=w1718-h1289-no?authuser=0" class="img-fluid" alt="Materials" /></p>
+
+        Materials:<br>
+        <ul>
+            <li>(x1) <a href="http://www.amazon.com/Ikea-201-620-01-Table-Asian-Paper/dp/B0051RZV7E/ref=sr_1_19?ie=UTF8&qid=1431275439&sr=8-19&keywords=ikea+lamp">Ikea Vate Lamp</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4806">Arduino Uno</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/63">9 VDC 1000mA regulated switching power adapter - UL listed</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/products/979">Maxbotix Ultrasonic Rangefinder - LV-EZ0 - LV-EZ0</a></li>
+            <li>(x1) 7-pin female header</li>
+            <li>(x1) light dependent resistor (LDR) salvaged from a lawn light</li>
+            <li>(x4) <a href="http://www.digikey.com/product-detail/en/CP41B-WGS-CK0P0154/CP41B-WGS-CK0P0154-ND/1922950">LED COOL WHITE CLEAR P4 T/H</a></li>
+            <li>(x4) 220Ohm resistor</li>
+            <li>(x1) 10kOhm resistor</li>
+            <li>(x1) breadboard</li>
+            <li>(x1) small recycled plastic container to mount contents inside lamp</li>
+            <li>(x10) feet of wire</li>
+            <li>(x1) solder</li>
+        </ul>
+        Tools:<br>
+        <ul>
+            <li>(x1) <a href="https://www.arduino.cc/en/software">Arduino IDE</a></li>
+            <li>(x1) A-B USB cable</li>
+            <li>(x1) wire cutters</li>
+            <li>(x1) soldering iron</li>
+        </ul>
+
+        <h4>Step 2: Assemble the Circuit</h4>
+        <p>Start by preparing the ultrasonic rangefinder. Solder the 7-pin female header pins to the through-holes. We'll only be using three of the pins: GND, +5, AN. Wire the rangefinder, leaving enough slack for the sensor to sit on top of the lamp shade. Continue populating the breadboard according to the below pictorial and schematic diagrams.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEU8TsGdRtY1wwqAdiHPjE7DN10j15qQOX5rT_ziyFRsNomZIGsCcN_Bh5EBgeNBMkk5eXdenk_OlFU0i5A7OtluUEd0k9cjhgkqMt3wSDlNWiCMgmYBYycB0O_ayxIYEuirbqUHxeBxd3njtMhlgy9stQ=w1519-h1319-no?authuser=0" class="img-fluid" alt="Pictorial Circuit" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEVh4Y_R-DNoygQTerQTVaCZlliW166Bnm1s0fQWSwgtbrkwdyqkTH80P4snAFVpVJx7IYtCNTPHSCuVcQhugaEX4Os-49_lwadN4_bl3jjpvfqIfgbjFo9zw_srnMx7RmXlCFHF-dprez_MJsnzH8rUkQ=w1490-h1319-no?authuser=0" class="img-fluid" alt="Schematic Diagram" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEVaiLGSDMu7Xw5cgEY5gb04FzqEINq0bSFTOBQ669JG0EZ4QN3a6OVp38TsuPl8iN5Z8OzUt--axVYX_8UleM-OXFq7lsrR8EBuiRzjPb0IfUR9XJWvoYihZMs0leUBe6Fzxv6aTYqtTJVW0RvEFPxRVw=w1718-h967-no?authuser=0" class="img-fluid" alt="Actual Circuit" /></p>
+                
+        <h4>Step 3: Program the Arduino</h4>
+        <p>Copy and paste the Arduino program from <a href="https://github.com/sakeofmaking/Moonlighting_Lamp/blob/master/Moonlighting_Lamp.ino">GitHub</a> into your Arduino IDE. Run Verify and Upload. If you don't see a lot happening, try covering the LDR sensor. The program is configured to only power the rangefinder in low-light conditions. This value can be tweaked under <q>// enable distance sensor only if day</q>.</p>
+
+        <h4>Step 4: Assemble the Lamp</h4>
+        <p>Place the lamp shade over your circuit and thread the rangefinder through thee top. If necessary, use the plastic container to house and center your circuit.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEV7U4isEvPcVrL8MbvXZZ1vYy6tZ8DHhn3CMpIHuuujx6wX7dwJxD4U-PoALmSXA7Z2eXs1EpCuDufehEVw7GzjhDOcbGfPtAoboyylXzpc-XGmXhfIcvOoSmNAvIRX_BGpBG08OXlK_l8vr9thhAqGkw=w1718-h1289-no?authuser=0" class="img-fluid" alt="Hidden Circuit" /></p>
+                
+        <h4>Step 5: Enjoy</h4>
+        <p>Plug in your Arduino and enjoy...at night.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEWU7n_iv7oyEi4FICrk9vMWs4Aiyoja9wxxUbZpt5kGCo69bG4oDfdYElyGXgyxWMjEW1jvzFy585mhAHkMEdmQdnjOUJgyj8WQcgiSN2Iur58VCUZWdp3g-5JciaNNbC2nYqx-1UuU1j8py_RZXjMHOw=w1718-h1146-no?authuser=0" class="img-fluid" alt="Moonlighting Lamp Day" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AL9nZEW0I0s268MxFfSJRurvi3hkfK3sOUzTkhp9N4jP-fFE8Xo0Wc5QC7AXVim-aQkouF769CJ3RiY5CAXUg3aeIQYedn9KDcW6bQDeqNNxYwr6gNfD2RmD-BFn4zFz6WdF3ErdIjWltblE99sytlbzL7oITw=w1280-h720-no?authuser=0" class="img-fluid" alt="Moonlighting Lamp Night" /></p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

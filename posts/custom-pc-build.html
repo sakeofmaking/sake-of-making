@@ -1,0 +1,221 @@
+<!-- custom-pc-build.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom PC Build</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Custom PC Build</h1>
+        <small style="white-space: pre;">Sep 12, 2021 |  Author: Nic La |  Tags:  project   computer  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AM-JKLUH0e7pBhMFzTndl46gbsrK4BvtIY3ogHpz99uDxNIbiT8KbuoOUNEn78T689gzy9oqp7U4iqLc03o_9hmXuRgoCzuf8kt4NwomyfI9_MGEvp7HzQYod9sOe4OuvpyswmNqFJi-Bl513zFADYmif0UQ5A=w1721-h1292-no?authuser=0"></p>
+
+        <p>Pre pandemic and fortuitous timing, I decided to upgrade my home PC setup. I had been using an old laptop like a desktop and was quickly running out of storage. This also seemed like a good time to switch from game console to PC gaming. So it was decided, I needed a badass gaming desktop that would last me the next 10 years.</p>
+
+        <h4>Research</h4>
+
+        <p>Budget:</p>
+        <p>Start with a budget. $2000 says I want the low-end of high-end PCs. This is also a good starting point for future expansion. Because you have plans to expand you can save money by spec'ing the minimum quantity of hardware that can be expanded upon, e.g. RAM and storage. Below are the essentials that comprise a PC. To spec' the appropriate parts, there's some basic questions to answer first.</p>
+
+        <ul>
+            <li>Case</li>
+            <li>Motherboard</li>
+            <li>CPU</li>
+            <li>CPU cooling</li>
+            <li>GPU</li>
+            <li>Storage</li>
+            <li>RAM</li>
+            <li>PSU</li>
+            <li>OS</li>
+        </ul>
+
+        <p>Windows or Mac OS or Linux?</p>
+        <p>Which OS to use? This was an easy one. Windows is the only way to go if you're serious about gaming. The games I'm interested in are not provided on Mac OS or Linux. Additionally, Windows is popular in the professional world. No reason to mix things up in my less professional life.</p>
+
+        <p>AMD or Intel?</p>
+        <p>I wanted the best so I compared the 10th Gen Intel Core i9 10900K against the AMD Ryzen 9 3900X. <a href="https://wccftech.com/intel-core-i9-10900k-vs-amd-ryzen-9-3900x-cpu-benchmarks-leak/">While comparable, AMD scores higher</a>. Rumors were that Intel had been struggling with heat management and AMD didn't have this problem.</p>
+
+        <p>NVIDIA GeForce or AMD Radeon?</p>
+        <p>Finding the right GPU is all about satisfying your graphics requirements for the lowest price. Naturally, AMD is going to cost less compared to its NVIDIA performance counterpart. That said, after a certain price point, NVIDIA surpases AMD in performace.</p>
+
+        <p>According to <a href="https://www.tomshardware.com/reviews/gpu-hierarchy,4388.html">Toms Hardware GPU Hierarchy</a>, given the same price point, Nvidia GeForce RTX 2060 Super scores 64.4% while AMD Radeon RX 5700 XT scores 72.3%. For $98 more, Nvidia GeForce RTX 2070 Super scores 75.8%. For $294 more, Nvidia GeForce RTX 2080 Super scores 85.1%. Accordig to <a href="https://www.tomshardware.com/reviews/best-gpus,4380.html">Toms Hardware Best GPUs</a>, AMD Radeon RX 5700 XT is ranked 3rd best under Nvidia GeForce RTX 2080 Super. According to <a href="https://www.pcworld.com/article/3106426/the-best-graphics-cards-for-pc-gaming.html#:~:text=Nvidia's GeForce GTX 1650 Super,for a mere $10 premium.">PC World Best Graphics Cards for PC Gaming</a>, AMD Radeon RX 5700 XT is designed for 1440p gaming at higher than 60fps. According to <a href="https://www.tomshardware.com/reviews/gpu-buying-guide,5844.html">Toms Hardware GPU Buying Guide</a>, AMD Radeon RX 5700 XT is considered high-end. Given all this research, AMD Radeon RX 5700 XT would have been perfectly adequate for my monitor and gaming expectations. Why not an all AMD build? Remember this PC needs to last 10 years. What if I decide to upgrade my monitor. Let's put in the extra $98 for the Nvidia GeForce RTX 2070 Super.</p>
+
+        <p>SSD or HDD?</p>
+        <p>This is hardly a decision. Of course SSD. Only the best SSD. If you're serious about gaming, which you are, one of the single greatest contributions you can make to performance is to switch from HDD to SSD. Don't skimp on quality here. Not only did I get SSD but I got M.2 SSD and not only did I get M.2 SSD but I got Samsung's Evo Plus M.2 SSD. All of this means faster read and write speeds. But wait! We don't want to over do the capacity here. We can always buy more storage later. 1TB should do just fine for now.</p>
+
+        <p>How much RAM?</p>
+        <p>Rather, how much RAM do I need starting out? You can always add more RAM later. 16 GB is a respectable number. 32 GB is the goal. Again, pay a little extra for those faster read and write speeds (Memory Clock Speed). You cannot mix RAM Memory Clock Speeds.</p>
+
+        <p>Custom Liquid Cooling or Commercial Liquid Cooling or Fan?</p>
+        <p>There's definitely a hierarchy here. From most desirable to least: custom liquid cooling, commercial liquid cooling, fan. Unfortunately, that is also the order of most expensive to least. Custom will typically cost in the order of $600 more than commercial. Custom or commercial, liquid cooling is going to be quieter than fan. When talking about PC cooling, certain devices take priority, i.e. CPU and GPU. Commercially available liquid cooling exists for a wide range of CPUs. However, liquid cooling a GPU usually requires a high-end GPU and a custom liquid cooling rig. Fan, don't bother.</p>
+
+        <p>Pre-Built or Custom?</p>
+        <p>A friend had just gotten a good deal on an Alienware Aurora R11. Alienware is solid but I like more control over my builds. Alienware lacks greater customization of components like motherboard and storage. NZXT has their own PC builder where everything has a part number, no vague components. You can actually spec' and purchase all the parts individually, build the PC yourself and save ~$100. I, knowing little about custom PCs, wanted NZXT to build it for me. I waited. I watched. Parts came and parts went. Prices came and prices went. Never did I see the combination of parts and price that would be my PC. I decided to build it myself.</p>
+
+        <h4>Parts List</h4>
+        <p>Given the above, the below is what I settled on.</p>
+
+        <ul>
+            <li>Case: <a href="https://www.amazon.com/dp/B07T94WD22/?coliid=I2W9KTTWQ70QS3&colid=2YIXKY9LKB2S8&psc=1&ref_=lv_ov_lig_dp_it">NZXT H710 - $137</a></li>
+            <li>Motherboard: <a href="https://www.amazon.com/MSI-X570-Gaming-Motherboard-Wi-Fi/dp/B07T2FWCYG/ref=sr_1_1?dchild=1&keywords=MSI+MPG+X570+GAMING+EDGE+WIFI&qid=1595208968&sr=8-1">MSI MPG X570 GAMING EDGE WIFI - $210</a></li>
+            <li>CPU: <a href="https://www.amazon.com/dp/B07SXMZLP9/?coliid=I1GDOH4TORVDBC&colid=2YIXKY9LKB2S8&psc=1&ref_=lv_ov_lig_dp_it">AMD Ryzen 9 3900X 12-Core 3.8GHz - $421</a></li>
+            <li>CPU cooling: <a href="https://www.amazon.com/NZXT-Kraken-Z73/dp/B082DYPF57/ref=sr_1_1?tag=sciestud09-20&keywords=kraken+z73&qid=1580236127&sr=8-1">NZXT Kraken Z73 with LCD display - $270</a></li>
+            <li>GPU: <a href="https://www.amazon.com/GIGABYTE-Graphics-Windforce-GV-N207SGAMING-OC-8GD/dp/B07WN6WB4G/ref=sr_1_1?tag=sciestud09-20&keywords=rtx+2070+super+gigabyte&qid=1580236157&sr=8-1&th=1">Gigabyte GeForce RTX 2070 Super - $550</a></li>
+            <li>Storage: <a href="https://www.amazon.com/Samsung-970-EVO-Plus-MZ-V7S1T0B/dp/B07MFZY2F2/ref=pd_di_v2_sccai_3/139-4291985-8151709?_encoding=UTF8&pd_rd_i=B07MFZY2F2&pd_rd_r=0d8c3ad6-f1cb-4c81-9807-fe2312c26dd5&pd_rd_w=8Z7Bh&pd_rd_wg=FieF5&pf_rd_p=47579771-02b9-4db9-aad8-9d98476f87cf&pf_rd_r=45NB02NRBA7FJ611F0JY&psc=1&refRID=45NB02NRBA7FJ611F0JY">Samsung 970 EVO Plus - $190</a></li>
+            <li>RAM: <a href="https://www.newegg.com/g-skill-16gb-288-pin-ddr4-sdram/p/N82E16820232483?Description=F4-3600C17D-16GTZR&cm_re=F4-3600C17D-16GTZR-_-20-232-483-_-Product&quicklink=true">G.SKILL TridentZ RGB Series 16GB - $118</a></li>
+            <li>PSU: <a href="https://www.newegg.com/nzxt-np-c850m-us-850w/p/N82E16817116041?Description=NZXT C850&cm_re=NZXT_C850-_-9SIAGKCBMX8391-_-Product&quicklink=true">NZXT C850 - $120</a></li>
+            <li>OS: <a href="https://www.newegg.com/microsoft-windows-10-pro-64-bit/p/N82E16832588491?Description=Microsoft Windows 10 Pro&cm_re=Microsoft_Windows 10 Pro-_-32-588-491-_-Product&quicklink=true">Microsoft Windows 10 Pro - $150</a></li>
+            <li>Figurine: Domo</li>
+        </ul>
+
+        <h4>Build It</h4>
+        <p><div class="embed-responsive embed-responsive-16by9" style="border-radius: 5px;">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/h-3RR8mF-0E" allowfullscreen></iframe>
+        </div></p>
+
+        <p>Taking notes, I watched several PC build videos.</p>
+
+        <ul>
+            <li><a href="https://youtu.be/n6nmCKE-aCM">I Built an NZXT Gaming PC!</a></li>
+            <li><a href="https://youtu.be/npGL2-pRXlU">How To Build a PC - Newegg's Step-By-Step Building Guide</a></li>
+            <li><a href="https://youtu.be/8O2wYLJpwoo">$3000 Gaming PC Build - i9 9900K RTX 2080 Ti (w/ Benchmarks)</a></li>
+            <li><a href="https://youtu.be/VfM_R1Lx5Hc">$1500 Gaming PC Build Guide - RTX 2070 i5 9600K (w/ Benchmarks)</a></li>
+        </ul>
+
+        <p>A pattern began to form. From that pattern, I created build instructions specific to my PC.</p>
+
+        <ol>
+            <li>Clear off a clean work surface. I recommend a desk.</li>
+            <li>Install the CPU in the motherboard. Align the CPU triangle with the marked corner.</li>
+            <li>Install the RAM in the motherboard. Reference the motherboard manual to determine the proper arrangement.</li>
+            <li>Install the SSD in a M.2 slot. I recommend the slot with the heat sink. Don't misplace that M.2 screw.</li>
+            <li>Place the case on its side. Install the motherboard. The motherboard has a built-in IO shield. Without the IO shield dust can get in. The case has built-in motherboard standoffs. Without the standoffs, the motherboard might short against the case.</li>
+            <li>Move the case to its feet.</li>
+            <li>Install the Kraken. I installed the Kraken fans in front. You want air to flow in through the front and out the back and top. The front of a fan is identifed by the open side. The back is identified by crossbars. Remove the front fans that came with the case. Mount the Kraken fans to the radiator. Remove the cable shroud from the case to mount the Kraken. Install the Kraken heat sink on the CPU. The Kraken heat sink comes with thermal paste already applied. Note the orientation of the LCD. Wires at the 12 o'clock is up. If mounted in a different position, the animation can be rotated. Wire the Kraken fans and LCD. Don't forget to remove the sticker on the LCD.</li>
+            <li>Install the fans, removed from the front earlier, in the case top. As a reminder, air should flow from the front and out the back and top. Wire the top fans.</li>
+            <li>Continue wiring. Wire the case to the motherboard.</li>
+            <li>Install the PSU. Attach only relevant cables. Mount the faceplate to the PSU. Insert the PSU and wire.</li>
+            <li>Install the GPU. Pick a PCIe slot. Top looks nicer. Remove the second and third expansion slots from the back of the case. Mount the GPU and wire.</li>
+            <li>Finishing touches. Install the figurine. I found a Domo that matched my style. You need to pick something that matches your own style. Funko Pops are popular.</li>
+            <li>Return the case panels, front and back. Install the bluetooth and wifi antennas.</li>
+            <li>Connect a monitor, keyboard, mouse, etc. Power up the PC. It's alive! If it's not alive, fret not. Review the previous steps. Most likely, a step was omitted or executed incorrectly.</li>
+        </ol>
+
+        <h4>Optimize</h4>
+        <ul>
+            <li>Install Windows 10 for free, if you're into that. Create a <a href="https://www.youtube.com/watch?v=bkafkI32Cs0">Deactivated Windows 10 USB Install</a>. A Deactivated Windows 10 will have a little watermark in the bottom right corner. Additionally, a Deactivated Windows 10 will lack full customizability.</li>
+            <li>Visit the <a href="https://www.msi.com/Motherboard/support/MPG-X570-GAMING-EDGE-WIFI">motherboard's website</a> and install the latest drivers.</li>
+            <ul>
+                <li>Audio</li>
+                <li>LAN</li>
+                <li>WLAN-BT</li>
+                <li>RGB and fan control program (Dragon Center)</li>
+            </ul>
+            <li>Confirm RAM is running at the <a href="https://youtu.be/VfM_R1Lx5Hc?t=754">rated frequency</a>.</li>
+            <ul>
+                <li>Boot into BIOS</li>
+                <li>Advanced Mode > Ai Overclock Tuner > Extreme Memory Profile (XMP) = Profile1</li>
+            </ul>
+            <li>Install GPU drivers</li>
+            <ul>
+                <li>Download and install <a href="https://www.nvidia.com/en-us/geforce/geforce-experience/download/">Nvidia Geforce Experience</a>.</li>
+                <li>Sign in. Expect auto download of latest driver upon sign in.</li>
+                <li>Select Express Installation.</li>
+            </ul>
+            <li>Disable GPU RGB lights. Download RGB Fusion 2.0. Disable RGB lights. Confirm, after power cycle, RGB lights do not return.</li>
+            <li>Download and install NZXT Cam program to control Kraken.</li>
+            <li>Expand on hardware.</li>
+            <ul>
+                <li>Expand RAM. Buy more of the same</li>
+                <li>Expand SSD. Buy more of the same</li>
+            </ul>
+            <li>Accessorize.</li>
+            <ul>
+                <li><a href="https://www.amazon.com/gp/product/B00PXYRMPE/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Dell UltraSharp U3415W 34-Inch Curved LED-Lit Monitor - $700</a></li>
+                <li><a href="https://www.amazon.com/gp/product/B01LZAK8MM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1">Logitech K780 Multi-Device Wireless Keyboard - $60</a></li>
+                <li><a href="https://www.amazon.com/gp/product/B07FNJB8TT/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1">Logitech MX Vertical Wireless Mouse - $94</a></li>
+                <li><a href="https://www.amazon.com/gp/product/B01LPZM7VI/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1">Xbox Wireless Controller - Black - $60</a></li>
+            </ul>
+            <li>Give your PC a name. Control Panel > System and Security > System > Change Settings.</li>
+            <li>Keep it going</li>
+        </ul>
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLXc3GRySAOZGpLW_-sgZnK-7pzdb-jGofSWeYGRoxhWqw0EfHoFzvjnWdMJaX6a45DvIrNtMJJ-xHRJ4ALP0PWvcbdXfRzo01q07fiakygv0DaedzEE7Qu03-2Vvjer2LMh9kFrZPNig-bKaQFA7PP9Bw=w1659-h1244-no?authuser=0" class="img-fluid" alt="Finished PC" /></p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

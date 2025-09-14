@@ -1,0 +1,141 @@
+<!-- friendcatcher.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friendcatcher</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Friendcatcher</h1>
+        <small style="white-space: pre;">Jul 10, 2021 |  Author: Nic La |  Tags:  project   cord  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AM-JKLUTC14HGjeh7iNOdV4ge8kGZmD254wtP-_zKBPfyu6qb2GyMeSmSMffkbJW8y2H6heIz6V0sthP0dK9sv_ba-f0T7sALnMxSur_yA7whKrPQS0eYfUKIA03Jicoo7aH0ZOtdY6sahRkPSsymdMIkEMMqA=w1721-h1290-no?authuser=0"></p>
+
+        <p>Floating, I prefer to use a Stand Up Paddleboard (SUP) while most friends use an innertube. As the only one with a paddle, I'm responsible for collecting my friends and keeping them together. It's like herding cats. As soon as I group them together the white water tears them apart. Introducing the Friendcatcher. This allows friends to quickly connect/disconnect on their own. There's no question who connects to who or how do I connect. It's all intuitive. A normal flow of operation might look like the below.</p>
+
+        <ol>
+            <li>On the river, load up the Friendcatcher with your communal cooler.</li>
+            <li>Connect all passenger tubes in a circle around Friendcatcher and ship out.</li>
+            <li>White water approaching, everyone disconnects from Friendcatcher leaving it to fend for itself.</li>
+            <li>Danger past, everyone reconnects to Friendcatcher.</li>
+            <li>If there's a blow out and we're down a tube, Friendcatcher can serve as an emergency floatation device.</li>
+        </ol>
+
+        <h4>Step 1: Materials + Tools</h4>
+        <p>Materials:</p>
+        <ul>
+            <li>(x1) <a href="https://www.amazon.com/gp/product/B00MNL12JW/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Tricam BT-45 Inflatable Swim and Snow Tube, 45-Inch, Black</a></li>
+            <li>(x1) <a href="https://www.amazon.com/gp/product/B00KH73I50/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">PARACORD PLANET 10 20 25 50 100 Foot Hanks and 250 1000 Foot Spools of Parachute 550 Cord Type III 7 Strand Paracord</a></li>
+            <li>(x3) <a href="https://www.amazon.com/gp/product/B06XW89JB2/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1&psc=1">Tactical Carabiner Keychain - Hard Polymer Carabiners Climbing D Rings Light Weight Spring Snap Gear Clip Utility Hooks Backpack Hanging Buckle for Camping Hiking Fishing</a></li>
+        </ul>
+        <p>Tools:</p>
+        <ul>
+            <li>(x1) <a href="https://www.amazon.com/gp/product/B07CHJ31WC/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Schrader tire pump</a></li>
+            <li>(x1) <a href="https://www.amazon.com/gp/product/B015S9V8NK/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1">Stainless Steel 550 Paracord Fid, Lacing, Stitching Needles (2pcs) Brand: sacoora</a> (optional)</li>
+            <li>(x1) lighter</li>
+            <li>(x1) sharp scissors</li>
+        </ul>
+
+        <h4>Step 2: Inflate</h4>
+        <p>Inflate the tube. Easy enough. The tube will act as scaffolding for the net to be built around.</p>
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLXle3rhtBAbBJC6LKpRrIHhpulpJd6fouZ1HpRAlY7j-ILZjMX5UPcqVx4uKp1jJVjt9W8jKrH_KnRkog6gZzXz9FcEGEhjOIAPCZ7z0zZAuZGWdOrOGwrpfwHIJxhleUNURHf8joGdylGRSpzYsVSRWw=w1721-h1292-no?authuser=0" class="img-fluid" alt="location" /></p>
+
+        <h4>Step 3: Prep the Net</h4>
+        <p>Get the net started by following the below video. The finished length of one row of knots should equal the circumference of the tube's opening, about 5.5 ft. Keep in mind that each knot reduces the length of the rope, so add a few inches. After at least one row of triangles, move on to the next step.</p>
+        <p><div class="embed-responsive embed-responsive-16by9" style="border-radius: 5px;">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JAMqZA27iA0" allowfullscreen></iframe>
+        </div></p>
+
+        <h4>Step 4: Integrate the Net</h4>
+        <p>Place the top of the net around the tube's opening, tying both ends together. Begin varying the spacing of the diamond pattern to accommodate the tube's surface. I.e. the diamond pattern should grow in size as the net grows outward. Once you've made your way around the tube, connect the ends by threading the loose ropes through the knots that once made up the top of the net.</p>
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLVXVRtzVlxXtjFXZacIBuHLopywYJA8dYhAc3kPKcpl610uxr8Zuxy9yymUbMZo9YCnIjWM3LwyUwKOdfQx0d1abLKuQS3lw37tebNzvYRBMUlmYw3-IUVvgJlC6ugoZsOkBVm8rOwhrUvEXOujzyvHbg=w1721-h1292-no?authuser=0" class="img-fluid" alt="location" /></p>
+        <p>Continue the pattern inward to form the base of the tube. Cut a 2ft length of rope and tie the ends together. This will form your center ring. Connect the pattern to the ring with the same knots you used at the top of the net.</p>
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLV7TnlMLjXEtjDF1hYPpYebMKNGaX69Po4iE0v8abGNNeTcnCdFRPx4xX2LvcrAoBpRfkSsTNk16wz23F8vpe1ryB0SC_6gbIId_J5HFW_TJwNOz2k8BzhCSE4DiRXvpzrmdqNzrkIaGBW36tDejAzfIg=w1721-h1292-no?authuser=0" class="img-fluid" alt="location" /></p>
+
+        <h4>Step 5: Clean it Up</h4>
+        <p>Add carabiners to the outer perimeter. The number of friends you're allowed is only limited by the number of carabiners you have. I'm allowed 14 friends!</p>
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLVRxXvh-SVjfW-TR9b6YNZvq0amhe64erG9uantbY6Xqfj5Z2QS3adpQmz7Q2dO_KodqRqGlHbjcvZRWSxk6pnNR_aiMIqHGqDq2V0lq4kMz8L4O93jKbnZMy0OSfKSUKVrRstP6nBN4YR3DnCe1o_LVw=w1721-h1292-no?authuser=0" class="img-fluid" alt="location" /></p>
+        <p>Cut any loose ends and the melt any loose strands. I also melted the knots together so they wouldn't come undone.</p>
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLXyr3YJ77YCERA0ur0fMzIgB0V-LgEu4YL0x3SYm6hjEv1qL5CwX8ZWM5nYVJ4tfJNf3OJ4JTu1Ky8ICnc5zAhQodHpnNcR9qmB1bbim5e-kS1YOBt0eEk6g9JXp-aizeuodhS8ZRAv7rWwLhFynFN15g=w1721-h1292-no?authuser=0" class="img-fluid" alt="location" /></p>
+
+        <h4>Step 6: Enjoy!</h4>
+        <p>Invite friends, family, enemies; the river has no capacity limit.</p>
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLWA9owAbUoknoUeMgudh0flvTiy8H2onxDJm4PY4-AkfncbaYvYmel9whOoMss1a6ulD-2N-iUFdt_EwQfSeH7YpJvoAR2MW0jMaLkwM_yC3IMRAksupec3Q_IWm3_WhqX1cdzGSLYx9Kdqv2gglOSAZQ=w1721-h1290-no?authuser=0" class="img-fluid" alt="location" /></p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

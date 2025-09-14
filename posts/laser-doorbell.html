@@ -1,0 +1,110 @@
+<!-- laser-doorbell.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laser Doorbell</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Laser Doorbell</h1>
+        <small style="white-space: pre;">May 14, 2022 |  Author: Nic La |  Tags:  blog   computer   3D print  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AM-JKLVoU5jM-8zA1zMIJnraOjRdz5R9jcCL79h_gl0UyICqg_vW-eg-wQQM2CQ5tHY3Sa0wRSwQXbJBRICFjjpKjTSrvXCr7nd0Hycklfc_hvXRqvVC4UohjkKVtnaHRA4E-jsFM9VMOGWX5AVVAzPCuNkcUA=w1718-h1289-no?authuser=0"></p>
+
+        <p>Company had a light curtain collecting dust on a shelf. Thought I could put it to better use in my cube. I give you the Laser Doorbell. My eyes and my ears can be buried in my computer monitor and my music, respectively. I can be fully immersed in a task and not notice someone standing next to me. The Laser Doorbell makes it possible for visitors to my cube to politely grab my attention.</p>
+
+        <p>A light curtain is an electro-mechanical devices commonly used in manufacturing to safeguard personnel from potentially hazardous machine motion. In my application, I am the personnel and the visitors to my cube are the hazardous motion. Shame on them.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLUNjd-A_g1WT9tKzCOtLDNFZyT7-ETnf9VKiurIIU5f8hnGd_2uysGPkJGKjNtskvJwdIJZbY1oTadSHIMLApYrSfihdJBJY8-QDS2bEk1rpQ6DZPCi_AHo2Eh8uad16xI3VPQgpZ9lNblIRaUMKQ0u7A=w990-h1319-no?authuser=0" class="img-fluid" alt="Light Curtain" /></p>
+
+        <p>The light curtain consists of a transmitter and receiver, one mounted on each side of my cubical entrance. These feed back to a small enclosure mounted on the underside of my desk. The light curtain is designed to work with a safety relay. Without it, the light curtain still has a normally closed output. Unobstructed, the output is high. Obstructed, the output is low. This logic is inverted using a normally closed relay. The light tower is connected to the relay output. Unobstructed, the light tower is off. Obstructed, the light tower is on.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLW4rWVtiKwCINI4e6r4VUlX2wnYuElzj5X9AJaC8mmWg2h2iJ3qXLFS4Lok2JhtRX89XGqEBHYqK3RC1tXOkk2lnx5OoEljqZnm0w3j3fUYcIxu7mss6kww2vow-Ww2AsHpVGMBVfcZ61VT-eLdOONYhA=w1718-h1289-no?authuser=0" class="img-fluid" alt="Outside Enclosure" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLWEXRekHJi-hv_S-A-_3dunArz95bpkQKcvZFyJu3kTWmjLCksnSJnxO3oc7PK8dgl338mFsGqMcZUkPE4eMeUC4SFQhYXgroPuXexTBUVCW0Yvmly2zx9Gld4rArqPQm-Zf0npslXP6nVmhadVrhXbNQ=w1731-h1299-no?authuser=0" class="img-fluid" alt="Inside Enclosure" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLUh9yFhu9238HpxVxyaxPO0Qm4ZY8zCtBkafR3W8LVt0tPfFZe8Xwgc1UYOhPjCNaAKdYDLHLCMiL9WIlY4UaBh4E-l7_iLMxv-zy20a1LugsUozkusHaJTiXBsRRfOE28rdnA71ByuCfmohwRoA3aWgA=w1731-h1299-no?authuser=0" class="img-fluid" alt="Light Tower On" /></p>
+
+        <p>You may have noticed the light tower is mounted on a custom <a href="https://www.thingiverse.com/thing:5332684">3D printed bracket</a>. This bracket is compatible with your standard VESA monitor mount. With dual monitor arms in my cube, this makes it easy to mount the light tower next to my single ultrawide monitor.</p>
+
+        <p><div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kYyacHJm2Rc" allowfullscreen></iframe>
+        </div></p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

@@ -1,0 +1,189 @@
+<!-- opinionated-tissue-box.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opinionated Tissue Box</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Opinionated Tissue Box</h1>
+        <small style="white-space: pre;">Jun 12, 2022 |  Author: Nic La |  Tags:  project   code   microcontroller   box  </small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AM-JKLVfmPyRQ_oq7G3qyn1jA_AxvnzcEhTWcLwH5ujLt4QKzrshmBcPaxvKCgd5renWhsELCVrFmXoyktXeb4Y6OEqqesG1193nvvdpViKy-xjSQ-laBKnL6NzByvxoP7VLyrrqZVKFiIqENM9uc6oZpJmY6w=w1785-h1340-no?authuser=0"></p>
+
+        <p>A tissue box with no reservations about sharing its opinion. Inspired by Tom Haverford's Talking Tissue from Parks and Recreation. The Opinionated Tissue Box plays a preloaded soundbite with each tissue draw. It also makes an excellent gift for a friend, complete with personalized messages.</p>
+
+        <p><div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/E5Y1zq5fZ2M" allowfullscreen></iframe>
+        </div></p>
+
+        <h4>Step 1: Materials + Tools </h4>
+        Materials:<br>
+        <ul>
+            <li>(x1) <a href="https://www.adafruit.com/product/175">Music & sound add-on pack for Arduino - v1.1</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/2914">3.5mm (1/8") 4-Pole (TRRS) Audio Plug Terminal Block</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4806">Arduino Uno</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/1766">Fast Vibration Sensor Switch (Easy to trigger)</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/63">9 VDC 1000mA regulated switching power adapter - UL listed</a></li>
+            <li>(x1) <a href="https://www.amazon.com/HBlife-Dispenser-Rectangle-Organizer-Bathroom/dp/B074DRZM2R/ref=sr_1_11?s=bedbath&ie=UTF8&qid=1525018693&sr=1-11&keywords=tissue+box+holder">Acrylic Tissue Dispenser</a></li>
+            <li>(x1) <a href="https://www.thingiverse.com/thing:4376033">3D Printed Separator Plate</a></li>
+            <li>(x2) speaker wire</li>
+            <li>(x1) heat-shrink</li>
+            <li>(x4) bolt</li>
+            <li>(x8) nut</li>
+            <li>(x50) tissue</li>
+        </ul>
+        Tools:<br>
+        <ul>
+            <li>(x1) <a href="https://www.arduino.cc/en/software">Arduino IDE</a></li>
+            <li>(x1) <a href="https://www.audacityteam.org/">Audacity</a></li>
+            <li>(x1) soldering iron</li>
+            <li>(x1) electric drill</li>
+            <li>(x1) Sharpie</li>
+        </ul>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLWsirkaUXKj8b-v6k3sO15MaXCMR3CrnIp97Kih4jZ-RTZA0eYQkC6-woC2lIXlYrI_OIDTaJ77mrI2PeowMl3yfZ4Gess1mqevRmggRVXVhZUIQzY2BsIoY3N-VSG7xQatu_jL2aHKgRlOSVLoSgW5pg=w1785-h1340-no?authuser=0" class="img-fluid" alt="Arduino and Wave Shield" /></p>
+
+        <h4>Step 2: Collect Soundbites</h4>
+        <p>Decide on what soundbites to make. The more soundbites, the more unsolicited advice your tissue box will dispense. 30 soundbites was a solid goal for me.</p>
+        <ol>
+            <li>"You da man"</li>
+            <li>"Do'h!"</li>
+            <li>"Happy Birthday Vahan"</li>
+            <li>"You go girl"</li>
+            <li>"God bless you"</li>
+            <li>"Gesundheit"</li>
+            <li>"You got this"</li>
+            <li>"Seize the day!"</li>
+            <li>"Carpe diem"</li>
+            <li>"You're very welcome"</li>
+            <li>"Beware the ides of March"</li>
+            <li>"Nic is awesome"</li>
+            <li>"That Nic is so cool"</li>
+            <li>"Nic is such a nice guy"</li>
+            <li>"Apple sauce"</li>
+            <li>"Don't get sick"</li>
+            <li>"Tissue?"</li>
+            <li>"Stop it that tickles"</li>
+            <li>"Not cool"</li>
+            <li>"Not again"</li>
+            <li>"Getting close"</li>
+            <li>"Just joking"</li>
+            <li>"I got you"</li>
+            <li>Mac boot up 1</li>
+            <li>Mac boot up 2</li>
+            <li>Mac crash 1</li>
+            <li>Mac crash 2</li>
+            <li>“Achu!"</li>
+            <li>Toilet flush</li>
+            <li>Wilhelm scream</li>
+        </ol>
+        <p>Collect your soundbites. Use your phone's built-in recorder app. Use Audacity to record your PC's audio as you play soundbites off YouTube. Wherever you get your soundbites, converting them to play on the Wave Shield can be a lengthy process. Continue to the next Step for details on how.</p>
+
+        <h4>Step 3: Configure Wave Shield</h4>
+        <p>Our Wave Shield plays WAV files. Who'd have thought. Your phone may vary, however, my phone exported audio recordings in M4A format. Audacity requires the <a href="https://lame.buanzo.org/#lamewindl">FFmpeg library</a> to import M4A files. Instructions on how to update Audacity's library preferences can be found in your Audacity's help file (Help > Manual)</a>. From here, follow <a href="https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/check-your-files">Adafruit's guide on how to convert sound files in Audacity</a>.</p>
+
+        <p>Next, follow <a href="https://learn.adafruit.com/adafruit-wave-shield-audio-shield-for-arduino/wavehc-library">Adafruit's guide</a> on preparing your Arduino to play WAV files off the Wave Shield. Be sure to download the test program and confirm your Wave Shield plays your WAV files. I received a "FAT partition not found" error and had to reformate the SD card as FAT3.</p>
+
+        <p>Success! Why is the audio so quiet? I went back to Audacity and increased the volume by 15dB on each soundbite. Any more dB and the audio quality was distractingly degraded.</p>
+
+        <h4>Step 4: Program Arduino</h4>
+        <p>Download the Arduino program from <a href="https://github.com/sakeofmaking/Opinionated-Tissue-Box/blob/master/tissue_box.ino">GitHub</a>. The program has been adapted from the previous test program to continuously monitor the vibration sensor for a tissue event and play a soundbite after each event.</p>
+
+        <h4>Step 5: Assemble</h4>
+        <p>Stage the devices in the acrylic enclosure and mark with a Sharpie. I decided on facing the speaker down and raising the enclosure up, to reflect the sound off whatever surface the enclosure was placed on. I oriented the Arduino with its power connector facing out so I could connect the external power supply. The separator plate will sandwich the Arduino in place, but the speaker might require its own fasteners. Super glue counts as a fastener. The bolts sandwiching the Arduino serve the dual purpose of elevating the enclosure. Drill the acrylic enclosure appropriately. Don't forget speaker holes.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLVAfWtHCDtkQC4ZwgeHPA2RMb1A023Z7Ytg1KtTt0bQ5e4mznbDoUarIYapc96v05Raf7ZnCj3S1uWfjHto_YRkTElHzqFIaw-zqmtqkrt2kr8I4KBj3UMkjaAnssR4J4xRT1L8h1tj6BaPgpHQKdIVpg=w1785-h1340-no?authuser=0" class="img-fluid" alt="Staged Parts" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLWpD06Dqj9cvvbJwDeE20HTkJW1L4zU3ULDWoQtEKlpMmHzsAAHGUGYhBytRarcdkSshWY44oMaA0pLqgXfs8YTyIPeGbC99Mp5HrI_I9nU3aYwl7fY8IYj3GMkeO9pieWrko0gOK3BWu8h-XhBY9lQlQ=w1785-h1340-no?authuser=0" class="img-fluid" alt="Staged Parts" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLWLBI_CBmQSbq3pvblRvD8wcnzUAm6qq5LC0XS-2_7i4fgJdcBQhWjTxXHcwzo7NyJ4brWmNlTWuyJaDS9NmeyHrTzNHs0szrCAOf6wBCbMFLJQNDHcdWp9YOy_hLBXCr5O8If1WltTJ7zpgCTpCqWgFA=w1785-h1340-no?authuser=0" class="img-fluid" alt="Sandwich" /></p>
+
+        <p>Solder a foot of speaker wire to the speaker. Connect the other end to Audio Plug L and ' '. Polarity doesn't matter.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLXCfKKFjwGufcvz0VtVPUTLUkpJzUbPulZNC9dN0uthXw-G1mrRG-CYBN3G4Es2nCrDwATZKCWrxZJZqCJnZWitXGV9fMDPg4aX0-763wlSQSuO_xNHK1C4IEkVaaYRmBWzHrDDHed5lY4BQLlp0E9A0w=w1785-h1340-no?authuser=0" class="img-fluid" alt="Speaker Wiring" /></p>
+
+        <p>Solder a foot of speaker wire to the vibration sensor. A foot should be enough slack to position the sensor optimally. I added a bit of heat-shrink to protect the sensor leads. That thin lead is delicate. Solder the other wire end directly to the Wave Shield: thick lead to A0, thin lead to GND.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AM-JKLX4RR6vIDcG0mcL-d1fodfPIM4wFhXPLrxeRekl7w3XmDNekUPEZ54qfv4ubkHtu9b_RTUMjmA8WHgYhb215v7_9bYOsQsdwBYBr2eqJ-QzmXx_XB_YNCMD1UWejkULomw9RCjfZgEDZrG2p4Fl3JkzGg=w1004-h1338-no?authuser=0" class="img-fluid" alt="Sensor Wiring" /></p>
+
+        <h4>Step 6: Blow Your Nose</h4>
+        <p>I hid the Celebratory Cash Gift underneath the pile of tissues. My friend had to endure my soundbites numerous times before arriving at the reward.</p>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>

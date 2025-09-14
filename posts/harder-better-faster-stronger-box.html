@@ -1,0 +1,294 @@
+<!-- harder-better-faster-stronger-box.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Harder Better Faster Stronger Box</title>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/base.css">
+    <!-- {% block head %}{% endblock head %} -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<!-- {% block body %} -->
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav id="nav-top" class="navbar navbar-expand-lg p-4 mb-5">
+            <div class="container">
+                <a id="nav-left" class="navbar-brand" href="../index.html">SAKE<br>OF<br>MAKING</a>
+
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="nav-right" class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    CATEGORIES
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Placeholder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="../about.html">ABOUT</a></li>
+                    </ul>
+                    <nav id="icon-links" class="mr-3 mt-3 mb-3">
+                        <a class="p-2" href="https://github.com/sakeofmaking"><img src="../images/github-white.png" width="32" height="32" alt="GitHub" /></a>
+                    </nav>
+                    <span class="form-inline">
+                        <form id="searchbar-form" action="{% url 'search_results' %}" method="get">
+                            <input class="search-input pl-3" name="q" type="text" placeholder="SEARCH">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Harder Better Faster Stronger Box</h1>
+        <small style="white-space: pre;">May 29, 2023 |  Author: Nic La |  Tags:  project   code   microcontroller   box  
+</small>
+        <p></p>
+
+        <p><img class="icon-img img-fluid" src="https://lh3.googleusercontent.com/pw/AJFCJaWG8iAlyPpIA8mjLKTg72dMNdsq0JmxiJEvzzhpLfVUhMDoQTsZ5atfGLyR-SsuUGeoqVTl-0ajEHSFzK0qcuW9AU2J9BiBLX3PeGRXKxyFwT1piuqsyxNGP4JDp3E1Z5bWYOv0k6id04A7Y8xMBErW3w=w1718-h1289-s-no?authuser=0"></p>
+
+        <p>A Daft Punk inspired musical puzzle box. Each of the silicone push buttons in the 4x4 grid delivers a soundbite from Daft Punk's hit song "Harder, Better, Faster, Stronger". The player must deliver these soundbites in the correct order to unlock the drawer and receive the prize. The correct order being found in the later half of the song. The prize being this year's nonfungible denomination, the celebratory $100 bill.</p>
+
+        <p><div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eaJehbPIjAY" allowfullscreen></iframe>
+        </div></p>
+
+        <p class="warning-block">WARNING: My puzzle boxes do not come with instructions for the player. The player is meant to figure out the rules to the game as well as complete the game without the aid of instruction (onsight for you rock climbers). The below instructions are for the puzzle master.</p>
+
+        <h4>Step 1: Materials + Tools </h4>
+        Materials:<br>
+        <ul>
+            <li>(x1) <a href="https://www.adafruit.com/product/3346">Adafruit I2S 3W Stereo Speaker Bonnet for Raspberry Pi - Mini Kit</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/1314">Speaker - 3" Diameter - 4 Ohm 3 Watt</a></li>
+            <li>(x1) <a href="https://www.amazon.com/gp/product/B00H3R3WYY/">B&W International Type 1000 Outdoor Case with SI Foam</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/1611">Silicone Elastomer 4x4 Button Keypad - for 3mm LEDs</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/780">Diffused Blue 3mm LED (25 pack)</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/1616">Adafruit Trellis Monochrome Driver PCB for 4x4 Keypad & 3mm LEDs</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/1314">Speaker - 3" Diameter - 4 Ohm 3 Watt</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/5135">Small Lock-style Solenoid 6VDC @ 600mAh with 2-pin JST</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/755">1N4001 Diode - 10 pack</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/976">TIP120 Power Darlington Transistors - 3 pack</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/2782">Through-Hole Resistors - 2.2K ohm 5% 1/4W - Pack of 25</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/1995">5V 2.5A Switching Power Supply with 20AWG MicroUSB Cable</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4213">Micro USB B Jack to USB A Plug Round Panel Mount Adapter</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/482">Rugged Metal On/Off Switch with Green LED Ring - 16mm Green On/Off</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/1954">Premium Female/Male 'Extension' Jumper Wires - 20 x 6"</a></li>
+            <li>(x1) <a href="https://www.amazon.com/gp/product/B012YZ2PXI/">Penta Angel 10pcs Double-Side Prototype PCB Universal Printed Circuit Board</a></li>
+            <li>(x1) Raspberry Pi 3 Model B+</li>
+            <li>(x1) 32GB micro SD card</li>
+            <li>(x2) Speaker wire</li>
+            <li>(x1) Assorted 22AWG wire spools</li>
+            <li>(x1) Heat-shrink</li>
+            <li>(x1) Solder</li>
+            <li>(x1) Black spray paint</li>
+            <li>(x1) <a href="https://www.amazon.com/gp/product/B00SVVY844/">Cable Matters 2-Pack Retractable Micro USB Cable - 2.5 Feet</a></li>
+            <li>(x1) <a href="https://www.amazon.com/OVERTURE-Filament-Consumables-Dimensional-Accuracy/dp/B07PGYHYV8/">OVERTURE PETG Filament 1.75mm</a></li>
+            <li>(x1) <a href="https://www.amazon.com/dp/B0B47MZ1SG">EEEEE M2 M2.5 M3 (214pcs) Metric Threaded Inserts for Plastic</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/3299">Black Nylon Machine Screw and Stand-off Set – M2.5 Thread</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/4685">Black Nylon Machine Screw and Stand-off Set – M3 Thread</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/392">Break-away 0.1" 36-pin strip male header - Black - 10 pack</a></li>
+            <li>(x1) <a href="https://www.adafruit.com/product/598">36-pin 0.1" Female header - pack of 5!</a></li>
+        </ul>
+        Tools:<br>
+        <ul>
+            <li>(x1) <a href="https://www.amazon.com/gp/product/B01ARAH6O0/">UGREEN SD Card Reader</a></li>
+            <li>(x1) Mounting putty</li>
+            <li>(x1) <a href="https://www.adafruit.com/product/424">Precision screwdriver set (6 pieces)</a></li>
+            <li>(x1) HDMI cable</li>
+            <li>(x1) Keyboard</li>
+            <li>(x1) Mouse</li>
+            <li>(x1) <a href="https://www.prusa3d.com/product/original-prusa-i3-mk3s-kit-6/">Original Prusa i3 MK3S+ kit</a></li>
+            <li>(x1) Soldering iron</li>
+            <li>(x1) Wire snips</li>
+            <li>(x1) Wire strippers</li>
+            <li>(x1) Needle nose pliers</li>
+            <li>(x1) X-Acto knife</li>
+            <li>(x1) Breadboard</li>
+            <li>(x1) <a href="https://www.amazon.com/gp/product/B00011QA0M/">PanaVise 350 Multi-Purpose Work Center</a></li>
+            <li>(x1) <a href="https://www.amazon.com/Magnifier-mlogiroa-Magnifying-Adjustable-Inspection/dp/B08Y1JZHD4/">Helping Hands Magnifier Soldering Station</a></li>
+        </ul>
+
+        <h4>Step 2: 3D Print Parts</h4>
+        <p>Get these going first, as they can take days to print on the Prusa i3 MK3S+. I made many iterations of 3D printed parts. Clearly, my trade is not in mechanical engineering. I followed the lesser known darts method of engineering. Throw a dart. If you miss your target, adjust and try again. The latest 3D models can be found on <a href="https://www.thingiverse.com/thing:6023699">Thingiverse</a>, complete with printer preferences.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaVSV3wpyR4DgjZb8uYQpqm59QBB2kqlrzwulcdMM5AOgobyVIPdWn_2QTaVo0WCIfN6Go-HfyJcEnTsWBTK9pU27cg1rmcRsa7MzehD0_5XxqUDSEWa1hpiq6N7LUYYtluSPtS7N0lAW5O2P9B8Ino4fA=w989-h1319-s-no?authuser=0" class="img-fluid" alt="Your many failures" /></p>
+
+        <h4>Step 3: Initialize Raspberry Pi</h4>
+        <p>While the parts are printing, start configuring the Raspberry Pi. I recommend starting with a fresh Pi, still warm, just off the kitchen window sill. If this is your first time setting up a Pi, Raspberry Pi provides a <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html">Getting Started</a> guide. Prep the micro SD card with the Raspberry Pi OS using the <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a>. Be sure to preconfigure the OS with wifi, local settings, etc. Your Pi should auto-login. This is what we want.</p>
+
+        <p class="warning-block">WARNING: I'm using a Raspberry Pi 3 Model B+. Will this project work with a different Pi? Most certainly. Will this project work with the random Pi you harvested from your inferior project. I don't know, maybe.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaXGj2M0zNCAvzjuHZ9uOAudac0cayAKvsktX7PBtWDsOlsh5KvRN3vtp6Ez6VoR3eWVgaKIEiHTUXfdHXfS3_gmRV8ZirnMvzhbIQ8iBAPvIHKfJlQF3mGYX_94amFl8VKx38B8enf520DDIbKVZM8BFw=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Fresh Pi" /></p>
+
+        <h4>Step 4: Configure Raspberry Pi for Trellis</h4>
+        <p>Because of the number of devices that need to work together, it's best to configure these one-by-one, confirming opertion of each before moving on to the next. Let's start with the Trellis board. Buttons and lights are easily rewarding. Follow <a href="https://learn.adafruit.com/adafruit-trellis-diy-open-source-led-keypad/overview">Introducing Adafruit Trellis</a> to solder the Trellis LEDs and wires. A PanaVise makes quick work of this.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaVD33S2PYPswt9OIpYwoRoGqY3WYzw6dlOj2kkGe_Bl5Fcn6vyzuAzixq0i6xujbBFHLm-MMi050nbSqTaEdS7t0gv1ZhrGB0rCZtulg1jTpUhuQUmBw_EJVp69azSpfjVYA0w0OOVHWjE0lBZTjFGbCw=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Solder Trellis 1" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaXf5mRqT0g_CCjl0nhf5h4ysBvAFzD1Xj9tqsxe9yzDP5MMp0cmR0mT4JrdngNhJAPQ3-kEetoY0_INU_PudTZ6W65pDsfMxDL-jYGjtu8ABJXqFYHR4wSXYkxXCvvFqDH2ZeQRB6REl-XV9dSZXmLgfA=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Solder Trellis 2" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaW_8VUW2-66RKV76XCOIXclQ_wIe379Czk9xt4ysq2nee4wzU4PSoJDrJha7HnDUeT9vWhwxCHLqf1hvMql8Jhj1c4kJKKRGSRT9-hQ4lr1l2nrHIKfQoN0vIqZhDiptpToDggymX2CzCDGcB1qEhxJsg=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Solder Trellis 3" /></p>
+
+        <p>Follow <a href="https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi">Installing Blinka on Raspberry Pi</a> to configure your Pi's I2C in prep for the Trellis. I2C will be needed to communicate with the Trellis. Confirm with the Blinka Test. Follow <a href="https://learn.adafruit.com/adafruit-trellis-diy-open-source-led-keypad/python-circuitpython#python-computer-wiring-3042240">Python Computer Wiring</a> and temporarily wire your Trellis and Pi. Breadboards are great for these sorts of things.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaV0bng9zhFirNhgvhJDFzkHuuz0XgJPTHIcspwVE4n_NdCDKxtDMwxdYctfj5uAT0HAI_-Gq7NCeJlHimq6z0_iMb4R-jB-SGKmNW2nOFQU03neRyC4xfM4cSx89aG57MmzZYsXYXE514ocrdOfKuUSVA=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Breadboard Trellis 1" /></p>
+
+        <p>Continue <a href="https://learn.adafruit.com/adafruit-trellis-diy-open-source-led-keypad/python-circuitpython#python-computer-wiring-3042240">Python Computer Wiring</a> to install adafruit-circuitpython-trellis. This library is used to command the Trellis buttons and LEDs. Test your Trellis with the Full Example Code.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaUgobLu0YtMln7RlS5k1phBG26lwK6BO5NfDQkc7Y6a6stCMr2ThMA2GUsDZ-XD9rirsBdh3p2CBv6pq6DRJdDMA-LGpWPSyNNo64B-IoiKEaD3nJ4R_zXsQ1Od_vldKRHjzj1LoKVp0sSk1dv76nWo1Q=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Breadboard Trellis 2" /></p>
+
+        <h4>Step 5: Configure Raspberry Pi for Bonnet</h4>
+        <p>Alone, the Raspberry Pi audio out jack is only powerful enough for headphones. To play decent audio through the 3W speaker, we need a 3W amp. The Stereo Speaker Bonnet is such an amp. Follow <a href="https://learn.adafruit.com/adafruit-speaker-bonnet-for-raspberry-pi">Adafruit Speaker Bonnet for Raspberry Pi</a> and solder header pins to your Bonnet. Be sure to solder additional male header pins to the Bonnet's top terminals.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaX31cxM36P3d9g2v-TZJJVBa_4FCwOEn9ehL6Kmi6qtGr-3isSMrtMpJX-cCmW_v_2tYl6uKRvPmQINuziD9SAg4bIY8ogTRdezE1Jylnnd5vjXz8Bqym0yUXfzLyDvAGHrx6AZol14q9Rlez5TSAD3dg=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Bonnet" /></p>
+
+        <p>Take this time to solder 1ft of speaker wire to your speaker. Wire your speaker to the Bonnet and mount on the Pi. Continue to <a href="https://learn.adafruit.com/adafruit-speaker-bonnet-for-raspberry-pi/raspberry-pi-usage">Raspberry Pi Setup</a> to configure your Pi for the Bonnet. Select 'y' to test your system but also open up a browser to YouTube. Confirm your system audio defaults to your speaker.</p>
+
+        <h4>Step 6: Confirm Pygame on Raspberry Pi</h4>
+        <p>Pi Python should come preloaded with Pygame. Say that five times fast. We'll be using Pygame's mixer to play the soundbites. <a href="https://learn.pimoroni.com/article/getting-started-with-piano-hat">Pimoroni</a> provides an interesting guide on how to do this. However, all you need to do is confirm the mixer can be imported with the below python command. No error is a good error.</p>
+
+        <p class="code-block">from pygame import mixer</p>
+
+        <h4>Step 7: Confirm GPIO Zero on Raspberry Pi</h4>
+        <p>Pi Python should come preloaded with GPIO Zero. GPIO Zero is used to interact with the Pi's GPIO pins. Confirm this by following the GPIO example <a href="https://gpiozero.readthedocs.io/en/stable/recipes.html#button-controlled-led">2.6. Button controlled LED</a>. Don't have a button and LED? You can use the Rugged Metal On/Off Switch with Green LED Ring. What is a switch, if not a latching button. The Switch has an internal resistor on the LED. Given the 3.3V on the Pi's GPIO, there's no need to add an additional resistor like in the example. Solder 1ft of 22AWG wire to each of the Switch terminals, leaving 'NC' wire-free. If, for some reason, GPIO Zero is not installed. GPIO Zero can be installed from <a href="https://gpiozero.readthedocs.io/en/stable/installing.html#installing-gpio-zero">1. Installing GPIO Zero</a>.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaVUOVLwwVMqvFZsIPK7CzpkmIx0E-g4n8jnOetZ7OxCno58QjJtX3IedPrsadHm0pwQqtLIKrqas4YXkW_Vgru3VR23z64k3BjCEQxKnGiLrOGq7H4V7jwXUv-lCv4OB_qY1GKLIsUHNwCXehPaPiGYHw=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Switch" /></p>
+
+        <h4>Step 8: Install Inserts</h4>
+        <p>Ding! Parts are done printing. With the Pi mostly configured, turn your attention back to the 3D printed parts. The Base (picture) is the only part that uses inserts. Use (x8) M3 H10 inserts for the eight tallest columns. Use (x8) M2.5 H4 inserts for the eight shorter columns. Use (x4) M2.5 H4 inserts for the solenoid mount. Inserts can be installed using needle nose pliers and a soldering iron on the lowest heat setting. Holding the insert with pliers, press the insert into the appropriate slot using the soldering iron. Careful not to touch the plastic with the iron.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaVPRFcwuGuDcz1d1Sw47mxp0hSZFthb72isXMx1fmydz6EOkVmz3LfjpFVECmqsWnpj-NYxsW-3ZvSW6b1sM1DuVp-o4ZuiFtkb5Of7ZcT0HdxV0KPZVLt-jRznb6Mm1oqEs45su8ZR6Y6sy_cDZopZsA=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Base" /></p>
+
+        <h4>Step 9: Solder PCB</h4>
+        <p>With the soldering iron still hot, solder the PCB. The PCB is the bridge between the Bonnet and GPIO controlled components, Switch and Solenoid, essentially the breadboard in the below picture.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaXjlFqWfyM9x32jKGgLlOhk7t_js-5dB2GyRTvDaXtw1jvwbrXw8SzliUPUSTNO9_rZsxOaM3VTPAz8nvanergE8S_C_1BRm_DZGvHVSqVlR32JNG7o_DNU34OQYOd3ent0ivSYC0CaxFgPjxsK2nikDQ=w1718-h1143-s-no?authuser=0" class="img-fluid" alt="Breadboard" /></p>
+
+        <p>Follow the schematic to make the point to point connections. I found, in addition to the schematic, sketching the PCB layout helps (picture). I mostly used header pins and jumper wires to help with the assembly. However, I did solder the solenoid directly to the PCB and recommend you do the same. Be sure to solder the solenoid to the closest PCB corner.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaXCHB-fYs4aqkWWCPM0iNFuvUFlHMdoTLfiExePiwhk45dyARc1lhPrRTYmPbDHcfo41bAoB7pblgu3YzUMF_blkNeYYeykTPKZkjT9pjJy-NwFnHEUybzMZsoJyTYApxiRk8tBg7jz7ms8wUsScOXpTQ=w1058-h1283-s-no?authuser=0" class="img-fluid" alt="Schematic" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaUznkBzTdUfCd9j8dcJxV8OAiJ3WRtAwTmPb3Vn0MasH8fFlzqBfCO-mX9I2vaH_Xn0PvLRwPerAoJi_pizIRahdg-MY8hPAoiBJ663PL4VtgkmNGM0Hxe5fXwLTec61hZJkTt--eA_OZryNpuIc5Ej9A=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Sketch" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaU8O9-VX0-fBHEd_9YxFhmbHocUAVrvN7yS3lrbrhrnYXOOTbqEJ2hvT2LOSWJ9LsvtEXzvzQmfdRBFTGuS_z-vxQaUYqC5h4YynDOuRdLKkP6fDMMfH6iu_M86dt7iGeXIkduGdr1k3xGCH76qnjpy2w=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="PCB" /></p>
+
+        <h4>Step 10: Assemble Outside</h4>
+        <p>Finally! All the pieces are prepped and (mostly) tested. Let's put them together and see if they work as a whole. The box is designed such that the pieces can be assembled outside the enclosure and then inserted in the enclosure. Start with the Base. Mount the Raspberry Pi with Bonnet, PCB with Solenoid, Trellis. Insert the Drawer. Make sure the Solenoid engages, but expect to adjust the Solenoid position later. Mount the Speaker and USB Jack in the Left Panel. Mount the Switch in the Right Panel. Reference the above skematic and wire everything accordingly.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaVO5idAqDJGsbe4Ak6sg_vj0CpRRzED2llb4wjS4TeT4ppXODlu69LSnBRkdCWiNGnjnUJVtzhl27we6qjf2Z1FpFAOtKP46NcswHfyWX_f1LyBr7nmf0rHPu2TsdyO_Fgrqh5AsPGTvxrR3lo0Drw-tw=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Pieces Outside Enclosure 1" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaWgXRHbSK7CfSLRvzn2PYCrtnvs1wbhZQAwHIZK_mLEUo1jyCwJ3-650SNZ-_szfrRLsaBkKDxemLg4LxJ7jBVwmsyYYchnjZrTv53UD7uf-mFM4z7FiSP3jrdyQJH9trzGOQwhg6FrF7EGrBlBMTnG2A=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Pieces Outside Enclosure 2" /></p>
+
+        <p>Still splayed, let's test everything and make any adjustments where necessary. Download/Clone the program content from the <a href="https://github.com/sakeofmaking/hbfs">GitHub Repo</a>. Place in a single folder on the Pi's Desktop. Note the file path to hbfs.py. Follow <a href="https://www.makeuseof.com/how-to-run-a-raspberry-pi-program-script-at-startup/">3. Run GUI Programs on Startup With Autostart</a> to run hbfs.py on boot. Confirm by rebooting your Pi with the following command.</p>
+
+        <p class="code-block">sudo reboot</p>
+
+        <p>The Pi will take a moment to boot up. You will hear an audible pop from the speaker. The Trellis LEDs will go through their start up sequence. Pressing a Trellis button will play one of the below soundbites. The soundbite button assignment is randomly assigned after each boot. The goal is to play the soundbites in the below order to unlock the drawer. Break out a pen and paper and start mapping the correct button sequence. Doing so without a pen and paper will drive you and those around you crazy.</p>
+
+        <ol>
+            <li>Work it</li>
+            <li>Harder</li>
+            <li>Make it</li>
+            <li>Better</li>
+            <li>Do it</li>
+            <li>Faster</li>
+            <li>Makes us</li>
+            <li>Stronger</li>
+            <li>More than</li>
+            <li>Ever</li>
+            <li>Hour</li>
+            <li>After</li>
+            <li>Hour</li>
+            <li>Work is</li>
+            <li>Never</li>
+            <li>Over</li>
+        </ol>
+
+        <p>You may have noticed there are two "Hour"s soudbites. The discering ear will note the higher note "Hour" comes first. This is an extra challenge for the player.</p>
+
+        <p>With each correct button depressed, the respective LED remains illuminated. A fully illuminated Trellis will play the victory soundbite (omitted from the above video copyright reasons). At the start of the victory soundbite, the Switch LED will illuminate. Depressing the Switch at this time will engage the solenoid for 10 seconds unlocking the Drawer. Test out the Drawer a few times. Reposition the solenoid as necessary. Now's also a good time to add the prize.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaWz-q-ZYd51FUl7PFLuVniqhEbZme2Qw55retITOPinPfpAZGGkJqucgcrlu1fNj2c_caYYrlFtjMd_GsW6Mox6zOlzfUudx2R_0qK9wzQFRcMznbyl8VbSmZNlnX5qX-Om6S4-JviyJdDrE9Jl1WBycA=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Drawer" /></p>
+
+        <h4>Step 11: Assemble Inside</h4>
+        <p>Fold the two panels over the Base and fasten in place. This is about when I noticed some tight tollerances. The USB Jack with cable comes very close to conflicting with the Raspberry Pi. The Switch comes very close to conflicting with the PCB. Squeeze everything together as best you can.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaXclZ4NAbFwEbP28qidclO_lWOIYHI770V_9GYWCL21LD9HHUfbfpf13QqTsplAdBa-MwIml-mUVXnI_58yMvo9A2zMog5v-sQ08p0oplkTWoU2-m8KbYCi3TyauKvTMKWTWoSa81rmDfQgu_suC99XmQ=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="USB Conflict" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaXIf7rGjuyZNSj99ltaQtCT-6pFYKK5tQtY3DNq46ERfJUqTT7O3reiVo3_e5nw7InVlfiz7EqVOeZ42TztK_edCp-D47F3rlLaS0Fjnjbfy9Qp3Zvt5eNXQcIdnKwBqxrxPCkeMXHo8iQSLk5KzOKcdw=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Switch Conflict" /></p>
+
+        <p>Sandwich intact, place inside the enclosure. Test again just to be sure.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaUlG5j2uy08jISPj34bkGCfx1gAGdKAMIwgj-OcWq6K8ABSRypM3XnRoR8gED5D6AA8uGeXAMWzw_883cUgq47bAZWT1KOXf3sMNziyfcXO21k10HeDRw0ybA60o2uFr1fzJD0wr7GAzMuFQyyG2oaIVw=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Pieces Inside Enclosure" /></p>
+
+        <h4>Step 12: Stencil Enclosure</h4>
+        <p>The pièce de résistance. Yeah, I'm no artist either, at least with paint. Use an x-acto knife to remove the sticker on top. Remove any sticky residue by hand. Position the stencil and fix in place with a little mounting putty. Cut a stencil size hole in a piece of paper. Use this to further shield the enclosure while applying a light layer of spray paint.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaXe9AMRNxOEqpcRj5cqLkzct0W8DWKH1xqdKlB7byvDg4o5b4rriOPH8AmhxAG3oSBqb8s3B5PfKOHI_U4RJid2FjL4eCxXi1luiTllOU36rHdaCujRw2wTBRuFAuj6Fdo-FpctzTN8feW5ZzBFHFGFew=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Remove Sticker" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaWxn6G5114PWA_45FPzpKcEnMgi5lD9Cj4V3c-gP2IO0b-D9nLw1OOmlZaqsPDqPqkIcZxvoH0RvI-mS56ue4TMutpYiHXH9q2Cy_IR9qqI14tgXUwqDQDhCs04wQD3vNGr73Fo-Aqb2pfP8q9gz8-MbQ=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Paper Shield" /></p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaXOqBygFc-HN3Avazh6bRUVpC1ZdsFOnKaeMMBASoGEVesy3dQTBP2mDdREXqeVZ3MsHF8VXrrIksPSUHvgND3dioK74SBCq6O45wRI5F0z92rNRzxwJtxhW4m4UT9ICQ5tpaagktSiVKkIz2O64umbBA=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Light Layer" /></p>
+
+        <p>Here is what a heavy layer of spray paint looks like.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaXQHDXV8EnBww5d2m7uaL7uHtMmUAZ79P1-zJDBcEWBZWK8iaBJO-iQ4QtSb8MNiXZLULxx1TBDn4zfhcvAui9xC9zAIszAoeDY7mwtPnZdyZ-UM7Upf7-6BOuknbTcFHEB54A58lyMBmUwMvJ02qjAHA=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Heavy Layer" /></p>
+
+        <h4>Step 13: Enjoy</h4>
+        <p>Wrap the HBFS Box and label "Happy Mothers Day!" because you missed your friends birthday, but made it in time for Mother's Day. Ship to said friend and wait.</p>
+
+        <p><img src="https://lh3.googleusercontent.com/pw/AJFCJaX2V7gqbeNk6RODLn8PKaJNnyzHHZNNdzSyt5sk94NOcOUTJQ5ECjlHoldoFr9Y_mgudDM151IC-85U7jxb0KVjysA0pZjCJhsCD1kHJCpmXI7hcCSqAgcNSc6vLgvq0AIr_Upc4O_qJC4xY0utHS0hEA=w1718-h1289-s-no?authuser=0" class="img-fluid" alt="Happy Mothers Day" /></p>
+
+        <p>For more inspiration, enjoy what first inspired the HBFS Box, Adafruit's <a href="https://learn.adafruit.com/mystery-box-crypto-countdown-case">Mystery Box: Crypto Countdown Case</a>.</p>
+
+        <h4>Step 14: Optimize</h4>
+        HBFS Box 2.0. There's always room for improvement.<br>
+        <ol>
+            <li>Increase USB Jack clearance from the Pi.</li>
+            <li>Increase Switch clearance from the PCB.</li>
+            <li>Fix sticky Solenoid issue. Suspect operating the solenoid below its operational voltage is the root cause.</li>
+            <li>Affix the Base to the enclosure somehow.</li>
+        </ol>
+
+        <hr>
+    </div>
+    <br /><br /><br /><br />
+
+    <footer>
+        <!-- Fixed footer -->
+        <div class="footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left" class="col p-2 pl-3">
+                        ©  SAKE OF MAKING <span id="year"></span>
+                    </div>
+                    <div id="footer-right" class="col-auto p-2 pr-3">
+                        WEBSITE DESIGN BY NIC LA
+                        <img src="../images/ducky.png" width="15" height="15">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/base.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
+    <!-- {% block java %}{% endblock java %} -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+</body>
+<!-- {% endblock body %} -->
+</html>
